@@ -1,7 +1,6 @@
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mock_test_app/controllers/splash_screen_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/utils/constants/urls.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});

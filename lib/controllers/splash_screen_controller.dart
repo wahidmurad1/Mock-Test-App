@@ -4,6 +4,13 @@ import 'package:mock_test_app/controllers/common_controller/globa_controller.dar
 
 class SplashScreenController extends GetxController {
   final GlobalController _globalController = Get.find<GlobalController>();
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    startSplashScreen();
+    super.onInit();
+  }
+
   Timer startSplashScreen() {
     _globalController.parentRoute.value = "splash-screen";
     var duration = const Duration(seconds: 2);

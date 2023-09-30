@@ -9,7 +9,7 @@ const double kCommonBackSpace = 60.0;
 const double k5BorderRadius = 5;
 const double k10BorderRadius = 10;
 const double k15BorderRadius = 15;
-const double kButtonBorderRadius = 50;
+const double kButtonBorderRadius = 4;
 const double kOvalBorderRadius = 90;
 
 BorderRadius k5CircularBorderRadius = BorderRadius.circular(5);
@@ -139,5 +139,5 @@ double keyboardValue = 0.0;
 
 //*Newly Added
 const double h30 = 30;
-const double h35 = 35;
+const double h40 = 40;
 const double h180 = 180;

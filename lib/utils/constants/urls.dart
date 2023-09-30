@@ -23,3 +23,5 @@
 
 //* images
 const String splashImage = 'assets/images/splash_image.png';
+const String loginImage = 'assets/images/login.png';
+const String otpImage = 'assets/images/otp.png';
