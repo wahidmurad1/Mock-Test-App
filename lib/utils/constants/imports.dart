@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:flutter/services.dart';
+export 'package:get/get.dart';
+export 'package:mock_test_app/utils/constants/const.dart';
+export 'package:get/get_navigation/src/routes/transitions_type.dart';
+export 'package:mock_test_app/splash_screen.dart';
+export 'package:mock_test_app/utils/constants/routes.dart';
+export 'package:mock_test_app/utils/utility_functions.dart';
+export 'package:mock_test_app/utils/constants/colors.dart';
