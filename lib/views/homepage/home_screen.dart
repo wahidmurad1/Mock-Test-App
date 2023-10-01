@@ -51,6 +51,51 @@ class HomeScreen extends StatelessWidget {
                       carouselController: _homeController.carouselController,
                       currentIndex: _homeController.slider1CurrentIndex,
                     ),
+                    kH15sizedBox,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.speaker,
+                          text: 'Hi',
+                        ),
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.task_rounded,
+                          text: 'Hi',
+                        ),
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.task_rounded,
+                          text: 'Hi',
+                        ),
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.add_task,
+                          text: 'Hi',
+                        ),
+                      ],
+                    ),
+                    kH20sizedBox,
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.task_rounded,
+                          text: 'Hi',
+                        ),
+                        SizedBox(
+                          width: 42,
+                        ),
+                        HomePageContainers(
+                          containerColor: Colors.red,
+                          icon: Icons.add_task,
+                          text: 'Hi',
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -104,6 +149,38 @@ class CommonImageSlider extends StatelessWidget {
                   ),
                 );
               }).toList())),
+        ),
+      ],
+    );
+  }
+}
+
+class HomePageContainers extends StatelessWidget {
+  const HomePageContainers({super.key, required this.containerColor, required this.text, required this.icon});
+  final Color containerColor;
+  final IconData icon;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            color: containerColor,
+            borderRadius: BorderRadius.circular(90),
+          ),
+          child: Icon(
+            icon,
+            color: cWhiteColor,
+            size: kIconSize30,
+          ),
+        ),
+        kH8sizedBox,
+        Text(
+          text,
+          style: p12RegularTextStyle(cTextPrimaryColor),
         ),
       ],
     );
