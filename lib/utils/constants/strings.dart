@@ -14,8 +14,10 @@ const String ksNext = 'Next';
 const String ksByBecomeAMember = 'By becoming a member, you consent to our';
 const String ksTermsAndConditions = 'Terms and Privacy Policy.';
 const String ksOtpVerification = 'OTP Verification';
-const String ksPleaseCheckSms = 'Please check your SMS messages for the code. It has been sent to the provided number: ( +880-1234567890 )';
+const String ksPleaseCheckSms = 'Please check your SMS messages for the code. It has been sent to the provided number';
 const String ksVerify = 'Verify';
+const String ksResendCode = 'Resend Code';
+const String ksDontRecieveCode = 'I didn\'t received code.';
 
 
 //! end:: string

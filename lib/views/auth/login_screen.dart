@@ -8,107 +8,87 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      // top: false,
       child: Scaffold(
         backgroundColor: cWhiteColor,
         body: Obx(
-          () => SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.end,
-                  //   children: [
-                  //     const Icon(
-                  //       Icons.light_mode_outlined,
-                  //       size: kIconSize24,
-                  //     ),
-                  //     kW15sizedBox,
-                  //     CustomElevatedButton(
-                  //       label: ksEn.tr,
-                  //       buttonWidth: h40,
-                  //       buttonHeight: h28,
-                  //       onPressed: () {},
-                  //       textStyle: p18RegularTextStyle(cWhiteColor),
-                  //     ),
-                  //   ],
-                  // ),
-                  // Image.asset(
-                  //   loginImage,
-                  //   height: 280,
-                  // ),
-                  const TopRowAndImage(imageLink: loginImage),
-                  Text(
-                    ksEnterNumber.tr,
-                    style: p20MediumTextStyle(cTextPrimaryColor),
-                  ),
-
-                  IntlPhoneField(
-                    controller: _authController.phoneNumberController,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                    ],
-                    onChanged: (value) {
-                      _authController.phoneNumber.value = value.number.toString().trim();
-                      if (_authController.phoneNumber.value.length == 10) {
-                        _authController.isPhoneNumberFilled.value = true;
-                      } else {
-                        _authController.isPhoneNumberFilled.value = false;
-                      }
-                    },
-                    decoration: InputDecoration(
-                      suffixIcon: _authController.isPhoneNumberFilled.value ? const Icon(Icons.turn_right_outlined) : null,
+          () => SizedBox(
+            width: width,
+            height: height - MediaQuery.of(context).padding.top,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const TopRowAndImage(imageLink: loginImage),
+                    Text(
+                      ksEnterNumber.tr,
+                      style: p20MediumTextStyle(cTextPrimaryColor),
                     ),
-                    initialCountryCode: 'BD',
-                  ),
-                  // IconButton(
-                  //     onPressed: () {
-                  //       showCountryPicker(
-                  //         context: context,
-                  //         showPhoneCode: true, // optional. Shows phone code before the country name.
-                  //         onSelect: (Country country) {
-                  //           print('Select country: ${country.displayName}');
-                  //         },
-                  //       );
-                  //     },
-                  //     icon: Icon(Icons.arrow_drop_down_rounded)),
-                  kH10sizedBox,
-                  CustomElevatedButton(
-                    buttonWidth: width - 40,
-                    buttonHeight: h50,
-                    labelIcon: Icons.arrow_right_alt_outlined,
-                    label: ksNext.tr,
-                    onPressed: _authController.isPhoneNumberFilled.value
-                        ? () {
-                            Get.toNamed(krOtpScreen);
-                          }
-                        : null,
-                    textStyle: p16MediumTextStyle(cWhiteColor),
-                  ),
-                  const TermsConditionText(),
 
-                  // Column(
-                  //   crossAxisAlignment: CrossAxisAlignment.center,
-                  //   children: [
-                  //     RichText(
-                  //       text: TextSpan(
-                  //         style: p12RegularTextStyle(cTextPrimaryColor),
-                  //         children: [
-                  //           TextSpan(
-                  //             text: '${ksByBecomeAMember.tr}\n',
-                  //             style: p12RegularTextStyle(cTextSecondaryColor),
-                  //           ),
-                  //           const TextSpan(
-                  //             text: ksTermsAndConditions,
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                ],
+                    IntlPhoneField(
+                      onCountryChanged: (countries) {
+                        _authController.countryPhoneNumberLength.value = countries.maxLength;
+                        _authController.isPhoneNumberFilled.value = false;
+                      },
+                      controller: _authController.phoneNumberController,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      ],
+                      onChanged: (value) {
+                        _authController.countryCode.value = value.countryCode;
+                        _authController.phoneNumber.value = value.number.toString().trim();
+                        if (_authController.phoneNumber.value.length == _authController.countryPhoneNumberLength.value) {
+                          _authController.isPhoneNumberFilled.value = true;
+                        } else {
+                          _authController.isPhoneNumberFilled.value = false;
+                        }
+                      },
+                      decoration: InputDecoration(
+                        suffixIcon: _authController.isPhoneNumberFilled.value ? const Icon(Icons.turn_right_outlined) : null,
+                      ),
+                      initialCountryCode: 'BD',
+                    ),
+
+                    kH10sizedBox,
+                    CustomElevatedButton(
+                      buttonWidth: width - 40,
+                      buttonHeight: h50,
+                      labelIcon: Icons.arrow_right_alt_outlined,
+                      label: ksNext.tr,
+                      onPressed: _authController.isPhoneNumberFilled.value
+                          ? () {
+                              Get.toNamed(krOtpScreen);
+                              _authController.phoneNumberController.clear();
+                              _authController.isPhoneNumberFilled.value = false;
+                            }
+                          : null,
+                      textStyle: p16MediumTextStyle(cWhiteColor),
+                    ),
+
+                    const TermsConditionText(),
+
+                    // Column(
+                    //   crossAxisAlignment: CrossAxisAlignment.center,
+                    //   children: [
+                    //     RichText(
+                    //       text: TextSpan(
+                    //         style: p12RegularTextStyle(cTextPrimaryColor),
+                    //         children: [
+                    //           TextSpan(
+                    //             text: '${ksByBecomeAMember.tr}\n',
+                    //             style: p12RegularTextStyle(cTextSecondaryColor),
+                    //           ),
+                    //           const TextSpan(
+                    //             text: ksTermsAndConditions,
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -147,17 +127,23 @@ class TermsConditionText extends StatelessWidget {
 }
 
 class TopRowAndImage extends StatelessWidget {
-  const TopRowAndImage({super.key, required this.imageLink, this.icon});
+  const TopRowAndImage({super.key, required this.imageLink, this.icon, this.backOnPressed});
   final String imageLink;
   final IconData? icon;
+  final VoidCallback? backOnPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Align(alignment: Alignment.topLeft, child: Icon(icon)),
+            IconButton(
+              onPressed: backOnPressed,
+              icon: Icon(icon),
+            ),
+            const Spacer(),
             const Icon(
               Icons.light_mode_outlined,
               size: kIconSize24,
@@ -174,7 +160,7 @@ class TopRowAndImage extends StatelessWidget {
         ),
         Image.asset(
           imageLink,
-          height: 280,
+          height: 200,
         )
       ],
     );

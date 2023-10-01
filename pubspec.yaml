@@ -39,6 +39,7 @@ dependencies:
   country_picker:
   intl_phone_field: ^3.2.0
   country_list_pick: ^1.0.1+6
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:

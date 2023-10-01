@@ -8,6 +8,4 @@ const Color cTransparentColor = Colors.transparent;
 const Color cTextPrimaryColor = Color(0xFF1E1E1E);
 const Color cTextSecondaryColor = Color(0xFF888888);
 const Color cOutLineColor = Color(0xFFCBCCCD);
-
-// const Color cBlueShade = Color(0XFFB8B1FF);
-
+const Color cBackgroundNeutralColor2 = Color.fromRGBO(24, 119, 242, 0.10);
