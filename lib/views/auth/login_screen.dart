@@ -141,7 +141,10 @@ class TopRowAndImage extends StatelessWidget {
           children: [
             IconButton(
               onPressed: backOnPressed,
-              icon: Icon(icon),
+              icon: Icon(
+                icon,
+                size: kIconSize16,
+              ),
             ),
             const Spacer(),
             const Icon(

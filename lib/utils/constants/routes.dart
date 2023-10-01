@@ -1,6 +1,7 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
 import 'package:mock_test_app/views/auth/login_screen.dart';
 import 'package:mock_test_app/views/auth/otp_screen.dart';
+import 'package:mock_test_app/views/homepage/home_screen.dart';
 
 //* info:: auth screens
 
@@ -12,7 +13,8 @@ const String krOtpScreen = '/otp-screen';
 
 const String krSplashScreen = '/splash-screen';
 // const String krHome = '/home';
-
+//*Home Screen
+const String krHomeScreen = '/home-screen';
 //* info:: profile and more screens
 // const String krProfileDetails = '/profile-details';
 // const String krEditUserProfile = '/edit-user-profile';
@@ -32,6 +34,9 @@ List<GetPage<dynamic>>? routes = [
 
   //* info:: other screens
   GetPage(name: krSplashScreen, page: () => SplashScreen(), transition: Transition.noTransition),
+
+  //*Home Screen
+  GetPage(name: krHomeScreen, page: () => HomeScreen(), transition: Transition.noTransition),
 
   //* info:: profile and more screens
   // GetPage(name: krProfileDetails, page: () => ProfilePage(), transition: Transition.noTransition),

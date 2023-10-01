@@ -1,6 +1,7 @@
 import 'package:mock_test_app/controllers/auth/auth_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
 import 'package:mock_test_app/views/auth/login_screen.dart';
+import 'package:mock_test_app/widgets/alert_dialog/common_alert_dialog.dart';
 import 'package:mock_test_app/widgets/common/auth/auth_linkup_textrow.dart';
 import 'package:mock_test_app/widgets/common/auth/count_down.dart';
 import 'package:mock_test_app/widgets/common/auth/otp_textfield.dart';
@@ -70,7 +71,11 @@ class OTPScreen extends StatelessWidget {
                       buttonHeight: h50,
                       labelIcon: Icons.arrow_right_alt_outlined,
                       label: ksVerify.tr,
-                      onPressed: _authController.canOTPVerifyNow.value ? () {} : null,
+                      onPressed: _authController.canOTPVerifyNow.value
+                          ? () {
+                              verifiedAlertDialog(context);
+                            }
+                          : null,
                       textStyle: p16MediumTextStyle(cWhiteColor),
                     ),
                     // kH20sizedBox,
@@ -84,4 +89,46 @@ class OTPScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void verifiedAlertDialog([context]) {
+  showAlertDialog(
+    context: context,
+    child: CommonAlertDialog(
+      addContent: SizedBox(
+        height: 100,
+        width: width - 200,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: k15Padding),
+          child: Column(
+            children: [
+              const Icon(
+                Icons.verified_user_outlined,
+                size: kIconSize50,
+                color: cPrimaryColor,
+              ),
+              Text(
+                ksVerified.tr,
+                textAlign: TextAlign.center,
+                style: p14MediumTextStyle(cPrimaryColor),
+              ),
+            ],
+          ),
+        ),
+      ),
+      actions: [
+        CustomElevatedButton(
+          buttonWidth: width * .5,
+          label: ksNext.tr,
+          buttonColor: cPrimaryColor,
+          onPressed: () async {
+            Get.toNamed(krHomeScreen);
+          },
+        ),
+        kH10sizedBox,
+      ],
+      hasCloseBtn: true,
+      onClose: () => Get.back(),
+    ),
+  );
 }

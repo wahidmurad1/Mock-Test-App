@@ -18,6 +18,8 @@ const String ksPleaseCheckSms = 'Please check your SMS messages for the code. It
 const String ksVerify = 'Verify';
 const String ksResendCode = 'Resend Code';
 const String ksDontRecieveCode = 'I didn\'t received code.';
+const String ksVerified = 'Verified!';
+const String ksHomePage = 'HomePage';
 
 
 //! end:: string
