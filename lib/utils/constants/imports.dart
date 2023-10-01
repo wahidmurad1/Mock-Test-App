@@ -11,3 +11,5 @@ export 'package:mock_test_app/utils/constants/strings.dart';
 export 'package:mock_test_app/widgets/common/custom_elevated_button.dart';
 export 'package:mock_test_app/utils/constants/urls.dart';
 export 'package:mock_test_app/utils/constants/styles.dart';
+export 'package:mock_test_app/utils/constants/resources.dart';
+export 'package:carousel_slider/carousel_slider.dart';
