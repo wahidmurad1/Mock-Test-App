@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       CommonImageSlider(
                         sliderImageList: _homeController.slider1ImageList,
-                        carouselController: _homeController.carouselController,
+                        carouselController: _homeController.slider1carouselController,
                         currentIndex: _homeController.slider1CurrentIndex,
                       ),
                       kH15sizedBox,
@@ -162,10 +162,11 @@ class HomeScreen extends StatelessWidget {
                             : const SizedBox(),
                       ),
                       CommonImageSlider(
-                        sliderImageList: _homeController.slider1ImageList,
-                        carouselController: _homeController.carouselController,
-                        currentIndex: _homeController.slider1CurrentIndex,
+                        sliderImageList: _homeController.gifSliderImageList,
+                        carouselController: _homeController.gifcarouselController,
+                        currentIndex: _homeController.gifSliderCurrentIndex,
                       ),
+                      kH50sizedBox,
                     ],
                   ),
                 ),

@@ -6,14 +6,15 @@ List contactUsMessages = [
   }
 ];
 List slider1ImageLists = [
-  {'id': 1, 'image': 'assets/images/tip1.png'},
-  {'id': 1, 'image': 'assets/images/login.png'},
-  {'id': 1, 'image': 'assets/images/otp.png'},
+    {'id': 1, 'image': 'assets/images/tip1.png'},
+  {'id': 2, 'image': 'assets/images/login.png'},
+  {'id': 3, 'image': 'assets/images/otp.png'},
+ 
 ];
 List gifSliderImageLists = [
-  {'id': 1, 'image': 'assets/images/.png'},
-  {'id': 1, 'image': 'assets/images/login.png'},
-  {'id': 1, 'image': 'assets/images/otp.png'},
+ {'id': 1, 'image': 'assets/images/work.gif'},
+  {'id': 2, 'image': 'assets/images/a.gif'},
+  {'id': 3, 'image': 'assets/images/rotating_earth.gif'},
 ];
 
 List popularMockTestLists = [
