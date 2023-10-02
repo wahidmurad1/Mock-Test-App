@@ -61,7 +61,7 @@ TextStyle p18RegularTextStyle(Color color) {
 }
 
 TextStyle p16MediumTextStyle(Color color) {
-  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w500, fontSize: screenWiseSize(h16, 2), color: color);
+  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w700, fontSize: screenWiseSize(h16, 2), color: color);
 }
 
 TextStyle p16RegularTextStyle(Color color) {
@@ -81,7 +81,7 @@ TextStyle p12MediumTextStyle(Color color) {
 }
 
 TextStyle p12RegularTextStyle(Color color) {
-  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w400, fontSize: screenWiseSize(h12, 2), color: color);
+  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w500, fontSize: screenWiseSize(h12, 2), color: color);
 }
 
 // //* info: remove extra padding from TextButton
