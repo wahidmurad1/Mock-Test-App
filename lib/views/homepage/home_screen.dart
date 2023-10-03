@@ -225,6 +225,34 @@ class HomeScreen extends StatelessWidget {
                                   : const SizedBox(),
                             )
                           : const SizedBox(),
+                      kH50sizedBox,
+                      ListViewTopRow(
+                        title: ksAudioBook,
+                        viewAllOnPressed: () {},
+                      ),
+                      const SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            AudioBookImage(
+                              imageName: otpImage,
+                            ),
+                            AudioBookImage(
+                              imageName: loginImage,
+                            ),
+                            AudioBookImage(
+                              imageName: otpImage,
+                            ),
+                            AudioBookImage(
+                              imageName: loginImage,
+                            ),
+                            AudioBookImage(
+                              imageName: otpImage,
+                            ),
+                          ],
+                        ),
+                      ),
+                      kH10sizedBox,
                     ],
                   ),
                 ),
@@ -448,6 +476,23 @@ class ListViewTopRow extends StatelessWidget {
           textStyle: p12RegularTextStyle(cPrimaryColor),
           onPressed: viewAllOnPressed,
           isIconExits: true,
+        ),
+      ],
+    );
+  }
+}
+
+class AudioBookImage extends StatelessWidget {
+  const AudioBookImage({super.key, required this.imageName});
+  final String imageName;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Image.asset(
+          imageName,
+          width: width / 2,
+          height: 100,
         ),
       ],
     );
