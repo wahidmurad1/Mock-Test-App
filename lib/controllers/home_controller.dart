@@ -7,10 +7,12 @@ class HomeController extends GetxController {
   final CarouselController slider1carouselController = CarouselController();
   //*popular Mock test
   final RxList popularMockTestList = RxList(popularMockTestLists);
-  //*arrow down button
-  final RxBool popularMockTestArrowDown = RxBool(false);
+  final RxBool popularMockTestArrowDownButton = RxBool(true);
   //*Gif image slider
   final RxList gifSliderImageList = RxList(gifSliderImageLists);
   final RxInt gifSliderCurrentIndex = RxInt(0);
   final CarouselController gifcarouselController = CarouselController();
+  //*MCQ Test
+  final RxList mcqTestList = RxList(mcqTestLists);
+  final RxBool mcqTestArrowDownButton = RxBool(true);
 }

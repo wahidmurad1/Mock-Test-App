@@ -5,28 +5,28 @@ class CustomRoundedCircleIconButton extends StatelessWidget {
     Key? key,
     required this.onPress,
     required this.icon,
-    this.iconColor = cTextSecondaryColor,
-    this.borderColor = cTextSecondaryColor,
+    this.iconColor,
+    this.borderColor,
     this.size,
     this.containerColor,
   }) : super(key: key);
 
   final Function()? onPress;
   final IconData? icon;
-  final Color iconColor, borderColor;
+  final Color? iconColor, borderColor;
   final double? size;
   final Color? containerColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height > kSmallDeviceSizeLimit ? 60 : 55,
-      width: height > kSmallDeviceSizeLimit ? 60 : 55,
+      height: height > kSmallDeviceSizeLimit ? 40 : 35,
+      width: height > kSmallDeviceSizeLimit ? 40 : 35,
       decoration: BoxDecoration(
           color: containerColor ?? cWhiteColor,
           shape: BoxShape.circle,
           border: Border.all(
-            color: borderColor,
+            color: borderColor ?? cTextSecondaryColor,
           )),
       child: ClipOval(
         child: TextButton(
@@ -35,7 +35,7 @@ class CustomRoundedCircleIconButton extends StatelessWidget {
           child: Icon(
             icon,
             size: (size != null) ? size : null,
-            color: iconColor,
+            color: iconColor ?? cWhiteColor,
           ),
         ),
       ),

@@ -81,3 +81,63 @@ List popularMockTestLists = [
     "price": "৫৯০",
   },
 ];
+
+List mcqTestLists = [
+  {
+    "examType": "Free",
+    "title": "45th BCS Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Paid",
+    "title": "Tips For Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Free",
+    "title": "45th BCS Mock Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Free",
+    "title": "45th BCS Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Paid",
+    "title": "Tips For Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Paid",
+    "title": "Tips For Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Free",
+    "title": "45th BCS Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+  {
+    "examType": "Paid",
+    "title": "Tips For Mcq Test",
+    "examMarks": "100 marks",
+    "examTime": "30 mins",
+    "examQuestionNumber": "100 questions",
+  },
+ 
+];

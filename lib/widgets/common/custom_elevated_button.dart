@@ -1,5 +1,4 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/utils/constants/styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String label;

@@ -1,6 +1,7 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
 import 'package:mock_test_app/widgets/common/common_text_button.dart';
+import 'package:mock_test_app/widgets/common/custom_circle_rounded_icon_button.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -12,19 +13,13 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: cWhiteColor,
           elevation: 0,
-          leading: Container(
-            decoration: BoxDecoration(
-              color: cWhiteColor,
-              borderRadius: BorderRadius.circular(90),
-            ),
-            child: IconButton(
-                constraints: const BoxConstraints(),
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  size: kIconSize20,
-                  color: cBlackColor,
-                )),
+          leading: CustomRoundedCircleIconButton(
+            onPress: () {},
+            icon: Icons.menu,
+            containerColor: cWhiteColor,
+            borderColor: cWhiteColor,
+            iconColor: cBlackColor,
+            size: kIconSize20,
           ),
           actions: [
             IconButton(
@@ -34,6 +29,15 @@ class HomeScreen extends StatelessWidget {
                   color: cBlackColor,
                   size: kIconSize20,
                 )),
+            Padding(
+              padding: const EdgeInsets.only(right: k12Padding),
+              child: CustomRoundedCircleIconButton(
+                onPress: () {},
+                icon: Icons.person,
+                containerColor: cPrimaryShadeColor,
+                size: kIconSize20,
+              ),
+            ),
           ],
         ),
         body: Obx(() => SizedBox(
@@ -70,20 +74,9 @@ class HomeScreen extends StatelessWidget {
                                 text: ksMockTest,
                               ),
                               HomePageContainers(
-                                containerColor: cRadicalRedColor,
-                                icon: Icons.speaker_notes,
-                                text: ksNotes,
-                              ),
-                              HomePageContainers(
                                 containerColor: cGreenColor,
                                 icon: Icons.radio_button_checked_outlined,
                                 text: ksMcq,
-                              ),
-                              // kH20sizedBox,
-                              HomePageContainers(
-                                containerColor: cMediumShadeOrangeColor,
-                                icon: Icons.tips_and_updates,
-                                text: ksTips,
                               ),
                               HomePageContainers(
                                 containerColor: cSlateBlueColor,
@@ -91,9 +84,19 @@ class HomeScreen extends StatelessWidget {
                                 text: ksWritting,
                               ),
                               HomePageContainers(
-                                containerColor: cVividBlueColor,
+                                containerColor: cPrimaryShadeColor,
                                 icon: Icons.add_task,
                                 text: ksBook,
+                              ),
+                              HomePageContainers(
+                                containerColor: cRadicalRedColor,
+                                icon: Icons.speaker_notes,
+                                text: ksNotes,
+                              ),
+                              HomePageContainers(
+                                containerColor: cMediumShadeOrangeColor,
+                                icon: Icons.tips_and_updates,
+                                text: ksTips,
                               ),
                             ],
                           ),
@@ -108,12 +111,9 @@ class HomeScreen extends StatelessWidget {
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _homeController.popularMockTestArrowDown.value
-                            ? _homeController.popularMockTestList.length
-                            : 5, //_hrController.filteredVisitorList.length,
+                        itemCount: _homeController.popularMockTestArrowDownButton.value ? 5 : _homeController.popularMockTestList.length,
                         itemBuilder: (context, index) {
                           var item = _homeController.popularMockTestList[index];
-
                           return Padding(
                             padding: const EdgeInsets.only(bottom: k10Padding),
                             child: ClipRRect(
@@ -126,13 +126,13 @@ class HomeScreen extends StatelessWidget {
                                 child: CustomListItems(
                                   backgroundImage: AssetImage(item['image']),
                                   itemTitle: item['title'],
-                                  examTime: item['examTime'],
-                                  ratingValue: item['rating'],
-                                  widget: Container(
+                                  subTittle1: item['examTime'],
+                                  subTittle2: item['rating'],
+                                  priceWidget: Container(
                                     width: h32,
                                     height: h16,
                                     decoration: BoxDecoration(
-                                      color: cPrimaryColor,
+                                      color: cPrimaryShadeColor,
                                       borderRadius: BorderRadius.circular(k5BorderRadius),
                                     ),
                                     child: Stack(
@@ -162,25 +162,185 @@ class HomeScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      IconButton(
-                        onPressed: () {
-                          _homeController.popularMockTestArrowDown.value = true;
-                        },
-                        icon: _homeController.popularMockTestList.length == _homeController.popularMockTestList.length
-                            ? const Icon(Icons.keyboard_arrow_down_outlined)
-                            : const SizedBox(),
-                      ),
+                      _homeController.popularMockTestArrowDownButton.value
+                          ? IconButton(
+                              onPressed: () {
+                                _homeController.popularMockTestArrowDownButton.value = false;
+                              },
+                              icon: _homeController.popularMockTestList.length == _homeController.popularMockTestList.length
+                                  ? const Icon(Icons.keyboard_arrow_down_outlined)
+                                  : const SizedBox(),
+                            )
+                          : const SizedBox(),
                       CustomImageSlider(
                         sliderImageList: _homeController.gifSliderImageList,
                         carouselController: _homeController.gifcarouselController,
                         currentIndex: _homeController.gifSliderCurrentIndex,
                       ),
                       kH50sizedBox,
+                      ListViewTopRow(
+                        title: ksMcqTest,
+                        viewAllOnPressed: () {},
+                      ),
+                      kH30sizedBox,
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _homeController.mcqTestArrowDownButton.value ? 5 : _homeController.mcqTestList.length,
+                        itemBuilder: (context, index) {
+                          var item = _homeController.mcqTestList[index];
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: k10Padding),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(k10BorderRadius),
+                              child: TextButton(
+                                style: kTextButtonStyle,
+                                onPressed: () async {},
+                                child: CustomListItems(
+                                  freeOrPaidWidget: CustomElevatedButton(
+                                    label: item['examType'],
+                                    onPressed: () {},
+                                    buttonColor: item['examType'].toString() == "Free" ? cGreenColor : cRedOrangeColor,
+                                    buttonWidth: h32,
+                                    buttonHeight: h20,
+                                    textStyle: p14MediumTextStyle(cWhiteColor),
+                                  ),
+                                  itemTitle: item['title'],
+                                  subTittle1: item['examMarks'],
+                                  subTittle2: item['examTime'],
+                                  subTittle3: item['examQuestionNumber'],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                      _homeController.mcqTestArrowDownButton.value
+                          ? IconButton(
+                              onPressed: () {
+                                _homeController.mcqTestArrowDownButton.value = false;
+                              },
+                              icon: _homeController.popularMockTestList.length == _homeController.popularMockTestList.length
+                                  ? const Icon(Icons.keyboard_arrow_down_outlined)
+                                  : const SizedBox(),
+                            )
+                          : const SizedBox(),
                     ],
                   ),
                 ),
               ),
             )),
+      ),
+    );
+  }
+}
+
+class CustomListItems extends StatelessWidget {
+  const CustomListItems(
+      {super.key,
+      this.backgroundImage,
+      required this.itemTitle,
+      required this.subTittle1,
+      required this.subTittle2,
+      this.subTittle3,
+      this.priceWidget,
+      this.freeOrPaidWidget});
+  final ImageProvider<Object>? backgroundImage;
+  final String itemTitle;
+  final String subTittle1;
+  final String subTittle2;
+  final String? subTittle3;
+  final Widget? priceWidget;
+  final Widget? freeOrPaidWidget;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: k8Padding),
+      child: Container(
+        width: width,
+        height: 100,
+        decoration: BoxDecoration(
+          color: cWhiteColor,
+          borderRadius: BorderRadius.circular(k10BorderRadius),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: k20Padding),
+          child: Row(
+            children: [
+              backgroundImage != null
+                  ? CircleAvatar(
+                      radius: 30,
+                      backgroundColor: cBackgroundNeutralColor2,
+                      backgroundImage: backgroundImage,
+                    )
+                  : const SizedBox(),
+              backgroundImage != null ? kW30sizedBox : const SizedBox(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  freeOrPaidWidget != null ? freeOrPaidWidget ?? const SizedBox() : const SizedBox(),
+                  freeOrPaidWidget != null ? kH5sizedBox : const SizedBox(),
+                  Text(
+                    itemTitle,
+                    style: p16MediumTextStyle(cTextPrimaryColor),
+                  ),
+                  kH5sizedBox,
+                  Row(
+                    children: [
+                      Text(
+                        subTittle1,
+                        style: p12RegularTextStyle(cTextSecondaryColor),
+                      ),
+                      // kW5sizedBox,
+                      const DotContainer(),
+                      // kW5sizedBox,
+                      Text(
+                        subTittle2,
+                        style: p12RegularTextStyle(cTextSecondaryColor),
+                      ),
+                      // subTittle3 != null ? kW5sizedBox : const SizedBox(),
+                      subTittle3 != null ? const DotContainer() : const SizedBox(),
+                      subTittle3 != null
+                          ? Text(
+                              subTittle3!,
+                              style: p12RegularTextStyle(cTextSecondaryColor),
+                            )
+                          : const SizedBox(),
+                      kW5sizedBox,
+                      backgroundImage != null ? Image.asset(starImage) : const SizedBox(),
+                      kW10sizedBox,
+                      priceWidget ?? const SizedBox(),
+                    ],
+                  ),
+                ],
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.arrow_circle_right_outlined,
+                color: cIconColor,
+                size: kIconSize20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class DotContainer extends StatelessWidget {
+  const DotContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 4,
+      height: 4,
+      margin: const EdgeInsets.symmetric(horizontal: k5Padding),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(k10BorderRadius),
+        color: cGreenColor,
       ),
     );
   }
@@ -257,7 +417,7 @@ class HomePageContainers extends StatelessWidget {
           child: Icon(
             icon,
             color: cWhiteColor,
-            size: kIconSize30,
+            size: kIconSize24,
           ),
         ),
         kH8sizedBox,
@@ -290,86 +450,6 @@ class ListViewTopRow extends StatelessWidget {
           isIconExits: true,
         ),
       ],
-    );
-  }
-}
-
-class CustomListItems extends StatelessWidget {
-  const CustomListItems({super.key, this.backgroundImage, required this.itemTitle, required this.examTime, required this.ratingValue, required this.widget});
-  final ImageProvider<Object>? backgroundImage;
-  final String itemTitle;
-  final String examTime;
-  final String ratingValue;
-  final Widget widget;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: k8Padding),
-      child: Container(
-        width: width,
-        height: 100,
-        decoration: BoxDecoration(
-          color: cWhiteColor,
-          borderRadius: BorderRadius.circular(k10BorderRadius),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: k20Padding),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundColor: cBackgroundNeutralColor2,
-                backgroundImage: backgroundImage,
-              ),
-              kW30sizedBox,
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    itemTitle,
-                    style: p16MediumTextStyle(cTextPrimaryColor),
-                  ),
-                  kH10sizedBox,
-                  Row(
-                    children: [
-                      Text(
-                        examTime,
-                        style: p12RegularTextStyle(cTextSecondaryColor),
-                      ),
-                      kW5sizedBox,
-                      Container(
-                        width: 4,
-                        height: 4,
-                        margin: const EdgeInsets.symmetric(horizontal: k5Padding),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(k10BorderRadius),
-                          color: cGreenColor,
-                        ),
-                      ),
-                      kW5sizedBox,
-                      Text(
-                        ratingValue,
-                        style: p12RegularTextStyle(cTextSecondaryColor),
-                      ),
-                      kW5sizedBox,
-                      Image.asset(starImage),
-                      kW10sizedBox,
-                      widget,
-                    ],
-                  ),
-                ],
-              ),
-              const Spacer(),
-              const Icon(
-                Icons.arrow_circle_right_outlined,
-                color: cIconColor,
-                size: kIconSize20,
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

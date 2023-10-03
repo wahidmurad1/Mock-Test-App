@@ -23,12 +23,14 @@ const String ksHomePage = 'HomePage';
 const String ksMockTest = 'Mock Test';
 const String ksMcq = 'MCQ';
 const String ksWritting = 'Writting';
-const String ksBook= 'Book';
-const String ksNotes= 'Notes';
+const String ksBook = 'Book';
+const String ksNotes = 'Notes';
 const String ksTips = 'Tips';
 const String ksPopularMockTest = 'Popular Mock Test';
 const String ksViewAll = 'View All';
 const String ksTaka = '৳';
+const String ksMcqTest = 'MCQ Test';
+const String ksAudioBook = 'Audio Book';
 
 
 //! end:: string
