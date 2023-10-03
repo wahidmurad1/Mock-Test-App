@@ -25,7 +25,6 @@ class LoginScreen extends StatelessWidget {
                       ksEnterNumber.tr,
                       style: p20MediumTextStyle(cTextPrimaryColor),
                     ),
-
                     IntlPhoneField(
                       onCountryChanged: (countries) {
                         _authController.countryPhoneNumberLength.value = countries.maxLength;
@@ -49,11 +48,10 @@ class LoginScreen extends StatelessWidget {
                       ),
                       initialCountryCode: 'BD',
                     ),
-
                     kH10sizedBox,
                     CustomElevatedButton(
                       buttonWidth: width - 40,
-                      buttonHeight: h50,
+                      buttonHeight: h40,
                       labelIcon: Icons.arrow_right_alt_outlined,
                       label: ksNext.tr,
                       onPressed: _authController.isPhoneNumberFilled.value
@@ -65,28 +63,7 @@ class LoginScreen extends StatelessWidget {
                           : null,
                       textStyle: p16MediumTextStyle(cWhiteColor),
                     ),
-
                     const TermsConditionText(),
-
-                    // Column(
-                    //   crossAxisAlignment: CrossAxisAlignment.center,
-                    //   children: [
-                    //     RichText(
-                    //       text: TextSpan(
-                    //         style: p12RegularTextStyle(cTextPrimaryColor),
-                    //         children: [
-                    //           TextSpan(
-                    //             text: '${ksByBecomeAMember.tr}\n',
-                    //             style: p12RegularTextStyle(cTextSecondaryColor),
-                    //           ),
-                    //           const TextSpan(
-                    //             text: ksTermsAndConditions,
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                   ],
                 ),
               ),
@@ -136,7 +113,6 @@ class TopRowAndImage extends StatelessWidget {
     return Column(
       children: [
         Row(
-          // mainAxisAlignment: MainAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(

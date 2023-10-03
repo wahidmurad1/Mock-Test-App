@@ -28,6 +28,7 @@ const String ksNotes= 'Notes';
 const String ksTips = 'Tips';
 const String ksPopularMockTest = 'Popular Mock Test';
 const String ksViewAll = 'View All';
+const String ksTaka = '৳';
 
 
 //! end:: string

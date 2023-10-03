@@ -16,3 +16,4 @@ const Color cRadicalRedColor = Color(0xFFFF2D55);
 const Color cMediumShadeOrangeColor = Color(0xFFB25000);
 const Color cSlateBlueColor = Color(0xFF5856D6);
 const Color cVividBlueColor = Color(0xFF0A84FF);
+const Color cGreyColor = Color(0xFF3C3C43);
