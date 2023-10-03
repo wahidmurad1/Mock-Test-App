@@ -15,4 +15,19 @@ class HomeController extends GetxController {
   //*MCQ Test
   final RxList mcqTestList = RxList(mcqTestLists);
   final RxBool mcqTestArrowDownButton = RxBool(true);
+
+  //*Bottom Navigation bar index
+  RxInt bottomNavBarIndex = RxInt(0);
+  //  final screens = [
+  //   Get.toNamed(krHomeScreen),
+  //   Get.toNamed(krLogin),
+  //   Get.toNamed(krOtpScreen),
+  //   Get.toNamed(krHomeScreen),
+  // ];
+  // final screens = [
+  //   HomeScreen(),
+  //   LoginScreen(),
+  //   OTPScreen(),
+  //   HomeScreen(),
+  // ];
 }

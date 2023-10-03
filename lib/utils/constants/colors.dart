@@ -4,6 +4,7 @@ import 'package:mock_test_app/utils/constants/imports.dart';
 const Color cWhiteColor = Color(0XFFFFFFFF);
 const Color cPrimaryColor = Color(0XFF1877F2);
 const Color cPrimaryShadeColor = Color(0XFF208DFE);
+const Color cBottomNavBarColor = Color.fromARGB(255, 165, 203, 244);
 const Color cIconColor = Color(0xFF97999B);
 const Color cTransparentColor = Colors.transparent;
 const Color cTextPrimaryColor = Color(0xFF1E1E1E);

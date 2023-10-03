@@ -28,9 +28,14 @@ const String ksNotes = 'Notes';
 const String ksTips = 'Tips';
 const String ksPopularMockTest = 'Popular Mock Test';
 const String ksViewAll = 'View All';
+const String ksOurMission = 'Our Mission';
 const String ksTaka = '৳';
 const String ksMcqTest = 'MCQ Test';
 const String ksAudioBook = 'Audio Book';
+const String ksHome = 'Home';
+const String ksTest = 'Test';
+const String ksSchedule = 'Schedule';
+const String ksReward = 'Reward';
 
 
 //! end:: string

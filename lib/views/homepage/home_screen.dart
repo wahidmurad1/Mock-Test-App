@@ -1,5 +1,6 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
+import 'package:mock_test_app/widgets/common/bottom_navigation_bar.dart';
 import 'package:mock_test_app/widgets/common/common_text_button.dart';
 import 'package:mock_test_app/widgets/common/custom_circle_rounded_icon_button.dart';
 
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: CustomBottomNavigationBar(),
         appBar: AppBar(
           backgroundColor: cWhiteColor,
           elevation: 0,
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 onPress: () {},
                 icon: Icons.person,
                 containerColor: cPrimaryShadeColor,
-                size: kIconSize20,
+                size: kIconSize16,
               ),
             ),
           ],
@@ -47,7 +49,10 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      // _homeController.screens[_homeController.bottomNavBarIndex.value],
+                      // _homeController.screens[_homeController.bottomNavBarIndex.value],
                       CustomImageSlider(
                         sliderImageList: _homeController.slider1ImageList,
                         carouselController: _homeController.slider1carouselController,
@@ -102,12 +107,12 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      kH50sizedBox,
+                      kH20sizedBox,
                       ListViewTopRow(
                         title: ksPopularMockTest,
                         viewAllOnPressed: () {},
                       ),
-                      kH30sizedBox,
+                      kH20sizedBox,
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -115,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           var item = _homeController.popularMockTestList[index];
                           return Padding(
-                            padding: const EdgeInsets.only(bottom: k10Padding),
+                            padding: const EdgeInsets.only(bottom: k5Padding),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(k10BorderRadius),
                               child: TextButton(
@@ -164,6 +169,8 @@ class HomeScreen extends StatelessWidget {
                       ),
                       _homeController.popularMockTestArrowDownButton.value
                           ? IconButton(
+                              padding: const EdgeInsets.only(top: k0Padding, bottom: k0Padding),
+                              constraints: const BoxConstraints(),
                               onPressed: () {
                                 _homeController.popularMockTestArrowDownButton.value = false;
                               },
@@ -172,17 +179,27 @@ class HomeScreen extends StatelessWidget {
                                   : const SizedBox(),
                             )
                           : const SizedBox(),
+                      kH15sizedBox,
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          ksOurMission,
+                          style: p16MediumTextStyle(cTextPrimaryColor),
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                      kH20sizedBox,
                       CustomImageSlider(
                         sliderImageList: _homeController.gifSliderImageList,
                         carouselController: _homeController.gifcarouselController,
                         currentIndex: _homeController.gifSliderCurrentIndex,
                       ),
-                      kH50sizedBox,
+                      kH20sizedBox,
                       ListViewTopRow(
                         title: ksMcqTest,
                         viewAllOnPressed: () {},
                       ),
-                      kH30sizedBox,
+                      kH20sizedBox,
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -190,7 +207,7 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           var item = _homeController.mcqTestList[index];
                           return Padding(
-                            padding: const EdgeInsets.only(bottom: k10Padding),
+                            padding: const EdgeInsets.only(bottom: k5Padding),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(k10BorderRadius),
                               child: TextButton(
@@ -203,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                                     buttonColor: item['examType'].toString() == "Free" ? cGreenColor : cRedOrangeColor,
                                     buttonWidth: h32,
                                     buttonHeight: h20,
-                                    textStyle: p14MediumTextStyle(cWhiteColor),
+                                    textStyle: p12MediumTextStyle(cWhiteColor),
                                   ),
                                   itemTitle: item['title'],
                                   subTittle1: item['examMarks'],
@@ -217,6 +234,8 @@ class HomeScreen extends StatelessWidget {
                       ),
                       _homeController.mcqTestArrowDownButton.value
                           ? IconButton(
+                              padding: const EdgeInsets.only(top: k0Padding, bottom: k0Padding),
+                              constraints: const BoxConstraints(),
                               onPressed: () {
                                 _homeController.mcqTestArrowDownButton.value = false;
                               },
@@ -225,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                                   : const SizedBox(),
                             )
                           : const SizedBox(),
-                      kH50sizedBox,
+                      kH20sizedBox,
                       ListViewTopRow(
                         title: ksAudioBook,
                         viewAllOnPressed: () {},
@@ -320,14 +339,11 @@ class CustomListItems extends StatelessWidget {
                         subTittle1,
                         style: p12RegularTextStyle(cTextSecondaryColor),
                       ),
-                      // kW5sizedBox,
                       const DotContainer(),
-                      // kW5sizedBox,
                       Text(
                         subTittle2,
                         style: p12RegularTextStyle(cTextSecondaryColor),
                       ),
-                      // subTittle3 != null ? kW5sizedBox : const SizedBox(),
                       subTittle3 != null ? const DotContainer() : const SizedBox(),
                       subTittle3 != null
                           ? Text(
@@ -344,10 +360,11 @@ class CustomListItems extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              const Icon(
-                Icons.arrow_circle_right_outlined,
-                color: cIconColor,
-                size: kIconSize20,
+              CustomRoundedCircleIconButton(
+                onPress: () {},
+                icon: Icons.arrow_right_alt_outlined,
+                iconColor: cIconColor,
+                size: kIconSize18,
               ),
             ],
           ),
@@ -491,8 +508,8 @@ class AudioBookImage extends StatelessWidget {
       children: [
         Image.asset(
           imageName,
-          width: width / 2,
-          height: 100,
+          width: 110,
+          height: 120,
         ),
       ],
     );

@@ -20,8 +20,8 @@ class CustomRoundedCircleIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height > kSmallDeviceSizeLimit ? 40 : 35,
-      width: height > kSmallDeviceSizeLimit ? 40 : 35,
+      height: height > kSmallDeviceSizeLimit ? 25 : 20,
+      width: height > kSmallDeviceSizeLimit ? 25 : 20,
       decoration: BoxDecoration(
           color: containerColor ?? cWhiteColor,
           shape: BoxShape.circle,
