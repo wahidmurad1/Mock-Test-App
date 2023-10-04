@@ -80,6 +80,11 @@ TextStyle p12MediumTextStyle(Color color) {
   return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w500, fontSize: screenWiseSize(h12, 2), color: color);
 }
 
+TextStyle p10MediumLineThrowTextStyle(Color color) {
+  return TextStyle(
+      fontFamily: ksSourceSans3, fontWeight: FontWeight.w400, fontSize: screenWiseSize(h10, 2), color: color, decoration: TextDecoration.lineThrough);
+}
+
 TextStyle p12RegularTextStyle(Color color) {
   return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w500, fontSize: screenWiseSize(h12, 2), color: color);
 }

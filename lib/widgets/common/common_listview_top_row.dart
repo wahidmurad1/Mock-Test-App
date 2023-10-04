@@ -1,7 +1,7 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
 
-class ListViewTopRow extends StatelessWidget {
-  const ListViewTopRow({super.key, required this.title, required this.viewAllOnPressed});
+class CustomListViewTopRow extends StatelessWidget {
+  const CustomListViewTopRow({super.key, required this.title, required this.viewAllOnPressed});
   final String title;
   final VoidCallback viewAllOnPressed;
   @override

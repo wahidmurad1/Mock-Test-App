@@ -1,8 +1,6 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
 
-
-
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final HomeController _homeController = Get.find<HomeController>();
@@ -85,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       kH20sizedBox,
-                      ListViewTopRow(
+                      CustomListViewTopRow(
                         title: ksPopularMockTest,
                         viewAllOnPressed: () {},
                       ),
@@ -172,11 +170,7 @@ class HomeScreen extends StatelessWidget {
                         currentIndex: _homeController.gifSliderCurrentIndex,
                       ),
                       kH20sizedBox,
-                      // Container(
-                      //   height: 20,
-                      //   color: cRedOrangeColor,
-                      // ),
-                      ListViewTopRow(
+                      CustomListViewTopRow(
                         title: ksMcqTest,
                         viewAllOnPressed: () {},
                       ),
@@ -226,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                             )
                           : const SizedBox(),
                       kH20sizedBox,
-                      ListViewTopRow(
+                      CustomListViewTopRow(
                         title: ksAudioBook,
                         viewAllOnPressed: () {},
                       ),
@@ -311,8 +305,6 @@ class HomePageContainers extends StatelessWidget {
     );
   }
 }
-
-
 
 class AudioBookImage extends StatelessWidget {
   const AudioBookImage({super.key, required this.imageName});
