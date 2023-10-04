@@ -36,6 +36,12 @@ const String ksHome = 'Home';
 const String ksTest = 'Test';
 const String ksSchedule = 'Schedule';
 const String ksReward = 'Reward';
+const String ksTests = 'Tests';
+const String ksPayment = 'Payment';
+const String ksSettings = 'Settings';
+const String ksFAQ = 'FAQ';
+const String ksSupport = 'Support';
+const String ksLogout = 'Logout';
 
 
 //! end:: string

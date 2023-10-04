@@ -1,6 +1,7 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
 import 'package:mock_test_app/widgets/common/bottom_navigation_bar.dart';
+import 'package:mock_test_app/widgets/common/common_drawer.dart';
 import 'package:mock_test_app/widgets/common/common_text_button.dart';
 import 'package:mock_test_app/widgets/common/custom_circle_rounded_icon_button.dart';
 
@@ -13,16 +14,10 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: cBlackColor, size: kIconSize20),
+          automaticallyImplyLeading: true,
           backgroundColor: cWhiteColor,
           elevation: 0,
-          leading: CustomRoundedCircleIconButton(
-            onPress: () {},
-            icon: Icons.menu,
-            containerColor: cWhiteColor,
-            borderColor: cWhiteColor,
-            iconColor: cBlackColor,
-            size: kIconSize20,
-          ),
           actions: [
             IconButton(
                 onPressed: () {},
@@ -32,7 +27,9 @@ class HomeScreen extends StatelessWidget {
                   size: kIconSize20,
                 )),
             Padding(
-              padding: const EdgeInsets.only(right: k12Padding),
+              padding: const EdgeInsets.only(
+                right: k12Padding,
+              ),
               child: CustomRoundedCircleIconButton(
                 onPress: () {},
                 icon: Icons.person,
@@ -42,6 +39,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+        drawer: const CustomDrawer(),
         body: Obx(() => SizedBox(
               width: width,
               height: height - (MediaQuery.of(context).padding.top),
@@ -195,6 +193,10 @@ class HomeScreen extends StatelessWidget {
                         currentIndex: _homeController.gifSliderCurrentIndex,
                       ),
                       kH20sizedBox,
+                      // Container(
+                      //   height: 20,
+                      //   color: cRedOrangeColor,
+                      // ),
                       ListViewTopRow(
                         title: ksMcqTest,
                         viewAllOnPressed: () {},
@@ -508,8 +510,8 @@ class AudioBookImage extends StatelessWidget {
       children: [
         Image.asset(
           imageName,
-          width: 110,
-          height: 120,
+          width: 120,
+          height: 140,
         ),
       ],
     );
