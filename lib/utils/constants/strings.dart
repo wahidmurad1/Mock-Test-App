@@ -45,6 +45,7 @@ const String ksLogOut = 'Logout';
 const String ksConfirmation = 'Conformation';
 const String ksAreYouSureYouWantToLogout = 'Are you sure you want to Logout';
 const String ksRating = 'Rating';
+const String ksProfileSetup = 'Profile Setup';
 
 
 //! end:: string

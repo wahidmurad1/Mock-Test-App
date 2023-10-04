@@ -37,7 +37,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: krHomeScreen, page: () => HomeScreen(), transition: Transition.noTransition),
 
   //* info:: profile and more screens
-  // GetPage(name: krProfile, page: () => ProfileScreen(), transition: Transition.noTransition),
+  GetPage(name: krProfile, page: () => ProfileScreen(), transition: Transition.noTransition),
   // GetPage(name: krEditUserProfile, page: () => EditProfile(), transition: Transition.noTransition),
   // GetPage(name: krDeleteProfileReason, page: () => DeleteProfileReason(), transition: Transition.noTransition),
   // GetPage(name: krDeleteProfile, page: () => DeleteProfile(), transition: Transition.noTransition),
