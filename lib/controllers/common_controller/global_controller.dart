@@ -13,8 +13,10 @@ class GlobalController extends GetxController {
     krHomeScreen,
   ];
 
-    //*Test Screen Search
+  //*Test Screen Search
   final RxBool isTestSearching = RxBool(false);
   final TextEditingController testSearchController = TextEditingController();
-  
+  //*Tab Bar
+  // final TickerProvider vsync;
+  // final TabController tabcontroller = TabController(length: 3, vsync: this.vsync);
 }

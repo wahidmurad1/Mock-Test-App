@@ -47,6 +47,9 @@ const String ksAreYouSureYouWantToLogout = 'Are you sure you want to Logout';
 const String ksRating = 'Rating';
 const String ksProfileSetup = 'Profile Setup';
 const String ksSearchHere = 'Search here';
+const String ksPopular = 'Popular';
+const String ksGovt = 'Govt.';
+const String ksPrivate = 'Private';
 
 
 //! end:: string
