@@ -32,8 +32,6 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // _homeController.screens[_homeController.bottomNavBarIndex.value],
-                      // _homeController.screens[_homeController.bottomNavBarIndex.value],
                       CustomImageSlider(
                         sliderImageList: _homeController.slider1ImageList,
                         carouselController: _homeController.slider1carouselController,
