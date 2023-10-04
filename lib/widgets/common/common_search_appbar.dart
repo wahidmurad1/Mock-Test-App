@@ -1,18 +1,26 @@
-import 'package:mock_test_app/controllers/mock_test_controller.dart';
+import 'package:mock_test_app/controllers/common_controller/global_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
+import 'package:mock_test_app/widgets/common/common_circular_icon_button.dart';
 
 class CustomSearchAppBar extends StatelessWidget {
-  CustomSearchAppBar({super.key, required this.title, required this.onChanged, required this.closeIconOnPressed, required this.searchBackButtonOnPressed});
+  CustomSearchAppBar(
+      {super.key,
+      required this.title,
+      required this.onChanged,
+      required this.closeIconOnPressed,
+      required this.searchBackButtonOnPressed,
+      required this.filterButtonOnPressed});
   final String title;
-  final MockTestController _mockTestController = Get.find<MockTestController>();
+  final GlobalController _globalController = Get.find<GlobalController>();
   final Function(String) onChanged;
   final VoidCallback closeIconOnPressed;
   final VoidCallback searchBackButtonOnPressed;
+  final VoidCallback filterButtonOnPressed;
 
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => _mockTestController.isMockSearching.value ? buildSearchAppBar() : buildInitialAppBar(),
+      () => _globalController.isTestSearching.value ? buildSearchAppBar() : buildInitialAppBar(),
     );
   }
 
@@ -42,9 +50,8 @@ class CustomSearchAppBar extends StatelessWidget {
             color: cBlackColor,
           ),
           onPressed: () {
-            _mockTestController.isMockSearching.value = true;
-            _mockTestController.mockSearchController.clear();
-            // _hrController.searchValue.value = '';
+            _globalController.isTestSearching.value = true;
+            _globalController.testSearchController.clear();
           },
         ),
       ],
@@ -56,40 +63,39 @@ class CustomSearchAppBar extends StatelessWidget {
       preferredSize: const Size.fromHeight(kAppBarSize),
       child: AppBar(
         titleSpacing: 0.0,
-        leadingWidth: 0,
+        leading: IconButton(
+          constraints: const BoxConstraints(),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: cBlackColor,
+            size: kIconSize16,
+          ),
+          onPressed: searchBackButtonOnPressed,
+        ),
         backgroundColor: cWhiteColor,
         elevation: 0,
         title: Padding(
-          padding: const EdgeInsets.only(bottom: k20Padding, left: k10Padding),
+          padding: const EdgeInsets.only(bottom: k16Padding),
           child: SizedBox(
             width: width,
             child: TextField(
-              controller: _mockTestController.mockSearchController,
+              controller: _globalController.testSearchController,
               decoration: InputDecoration(
-                prefixIcon: IconButton(
-                  padding: const EdgeInsets.only(top: k20Padding, right: k10Padding),
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    color: cBlackColor,
-                    size: kIconSize16,
+                suffixIconConstraints: const BoxConstraints(),
+                prefixIconConstraints: const BoxConstraints(),
+                suffixIcon: const Padding(
+                  padding: EdgeInsets.only(top: k20Padding, bottom: k8Padding, left: k0Padding),
+                  child: CustomCircularIconButton(
+                    containerWidth: h16,
+                    containerHeight: h16,
+                    icon: Icons.close,
+                    containerColor: cGreyColor,
+                    iconColor: cWhiteColor,
+                    iconSize: kIconSize12,
                   ),
-                  onPressed: searchBackButtonOnPressed,
                 ),
-                suffixIcon: IconButton(
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
-                  icon: const Icon(Icons.close),
-                  iconSize: kIconSize14,
-                  onPressed: closeIconOnPressed,
-                  // padding: const EdgeInsets.only(top: k20Padding, right: k10Padding),
-                  // icon: const Icon(
-                  //   Icons.close,
-                  //   size: h18,
-                  // ),
-                  // onPressed: onPressed,
-                ),
-                hintText: ksSearching.tr,
-                contentPadding: const EdgeInsets.only(top: k20Padding, right: k10Padding, left: k0Padding),
+                hintText: ksSearchHere.tr,
+                contentPadding: const EdgeInsets.only(top: k20Padding, bottom: k8Padding, left: k0Padding),
               ),
               onChanged: onChanged,
             ),
@@ -98,11 +104,11 @@ class CustomSearchAppBar extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(
-              Icons.search,
+              Icons.filter_list,
               color: cBlackColor,
-              size: kIconSize16,
+              size: kIconSize20,
             ),
-            onPressed: () {},
+            onPressed: filterButtonOnPressed,
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/controllers/common_controller/globa_controller.dart';
+import 'package:mock_test_app/controllers/common_controller/global_controller.dart';
 
 class SplashScreenController extends GetxController {
   final GlobalController _globalController = Get.find<GlobalController>();

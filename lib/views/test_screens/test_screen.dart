@@ -1,9 +1,10 @@
+import 'package:mock_test_app/controllers/common_controller/global_controller.dart';
 import 'package:mock_test_app/controllers/mock_test_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/widgets/common/common_search_appbar.dart';
 
 class TestScreen extends StatelessWidget {
   TestScreen({super.key});
+  final GlobalController _globalController = Get.find<GlobalController>();
   final MockTestController _mockTestController = Get.find<MockTestController>();
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,12 @@ class TestScreen extends StatelessWidget {
         preferredSize: const Size.fromHeight(kAppBarSize),
         child: CustomSearchAppBar(
           searchBackButtonOnPressed: () {
-            _mockTestController.isMockSearching.value = false;
+            _globalController.isTestSearching.value = false;
           },
           title: ksTest,
           onChanged: (value) {},
           closeIconOnPressed: () {},
+          filterButtonOnPressed: () {},
         ),
       ),
       body: Obx(
@@ -39,7 +41,7 @@ class TestScreen extends StatelessWidget {
                   CustomListViewTopRow(
                       title: ksMockTest,
                       viewAllOnPressed: () {
-                        // Get.toNamed();
+                        Get.toNamed(krMockTestScreen);
                       }),
                   kH10sizedBox,
                   ListView.builder(

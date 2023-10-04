@@ -12,4 +12,9 @@ class GlobalController extends GetxController {
     krProfile,
     krHomeScreen,
   ];
+
+    //*Test Screen Search
+  final RxBool isTestSearching = RxBool(false);
+  final TextEditingController testSearchController = TextEditingController();
+  
 }
