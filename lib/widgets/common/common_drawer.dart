@@ -29,14 +29,15 @@ class CustomDrawer extends StatelessWidget {
                 ],
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: k20Padding),
                     child: Row(
                       children: [
                         Container(
-                          height: 50,
-                          width: 50,
+                          height: 40,
+                          width: 40,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
@@ -46,12 +47,37 @@ class CustomDrawer extends StatelessWidget {
                           child: Image.asset(otpImage),
                         ),
                         kW20sizedBox,
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Text(
-                            'Wahid Murad',
-                            style: p16MediumTextStyle(cTextPrimaryColor),
-                          ),
+                        Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.topCenter,
+                              child: Text(
+                                'Wahid Murad',
+                                style: p16MediumTextStyle(cTextPrimaryColor),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.topCenter,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    ksRating.tr,
+                                    style: p12RegularTextStyle(cTextSecondaryColor),
+                                  ),
+                                  kW5sizedBox,
+                                  Image.asset(
+                                    starImage,
+                                    height: h8,
+                                  ),
+                                  kW5sizedBox,
+                                  Text(
+                                    '10',
+                                    style: p12RegularTextStyle(cTextSecondaryColor),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const Spacer(),
                         const Icon(

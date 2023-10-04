@@ -1,9 +1,9 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
+import 'package:mock_test_app/widgets/appbar/custom_home_screen_appbar.dart';
 import 'package:mock_test_app/widgets/common/bottom_navigation_bar.dart';
 import 'package:mock_test_app/widgets/common/common_drawer.dart';
 import 'package:mock_test_app/widgets/common/common_text_button.dart';
-import 'package:mock_test_app/widgets/common/custom_circle_rounded_icon_button.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -13,36 +13,19 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: cBlackColor, size: kIconSize20),
-          automaticallyImplyLeading: true,
-          backgroundColor: cWhiteColor,
-          elevation: 0,
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.notifications_active_outlined,
-                  color: cBlackColor,
-                  size: kIconSize20,
-                )),
-            Padding(
-              padding: const EdgeInsets.only(
-                right: k12Padding,
-              ),
-              child: CustomRoundedCircleIconButton(
-                onPress: () {},
-                icon: Icons.person,
-                containerColor: cPrimaryShadeColor,
-                size: kIconSize16,
-              ),
-            ),
-          ],
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kHomeAppBarSize),
+          child: CustomHomeScreenAppBar(
+            notificationOnPressed: () {},
+            profileOnPressed: () {
+              Get.toNamed(krProfile);
+            },
+          ),
         ),
         drawer: const CustomDrawer(),
         body: Obx(() => SizedBox(
               width: width,
-              height: height - (MediaQuery.of(context).padding.top),
+              height: height - (MediaQuery.of(context).padding.top + kAppBarSize),
               child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),

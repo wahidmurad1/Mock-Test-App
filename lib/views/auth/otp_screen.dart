@@ -1,10 +1,5 @@
 import 'package:mock_test_app/controllers/auth/auth_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/views/auth/login_screen.dart';
-import 'package:mock_test_app/widgets/alert_dialog/common_alert_dialog.dart';
-import 'package:mock_test_app/widgets/common/auth/auth_linkup_textrow.dart';
-import 'package:mock_test_app/widgets/common/auth/count_down.dart';
-import 'package:mock_test_app/widgets/common/auth/otp_textfield.dart';
 
 class OTPScreen extends StatelessWidget {
   OTPScreen({super.key});
@@ -21,7 +16,7 @@ class OTPScreen extends StatelessWidget {
             height: height - MediaQuery.of(context).padding.top,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),
+                padding: const EdgeInsets.only(top: k10Padding, left: k20Padding, right: k20Padding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -35,10 +30,15 @@ class OTPScreen extends StatelessWidget {
                       ksOtpVerification.tr,
                       style: p20MediumTextStyle(cTextPrimaryColor),
                     ),
-                    Text(
-                      '${ksPleaseCheckSms.tr}: (${_authController.countryCode.value + _authController.phoneNumber.value})',
-                      style: p12RegularTextStyle(cTextPrimaryColor),
-                    ),
+                    CustomRichText(
+                        defaultText: ksPleaseCheckSms.tr,
+                        richText: ' (${_authController.countryCode.value + _authController.phoneNumber.value})',
+                        defaultTextStyle: p12RegularTextStyle(cTextSecondaryColor),
+                        richTextStyle: p12MediumTextStyle(cTextPrimaryColor)),
+                    // Text(
+                    //   '${ksPleaseCheckSms.tr}: (${_authController.countryCode.value + _authController.phoneNumber.value})',
+                    //   style: p12RegularTextStyle(cTextPrimaryColor),
+                    // ),
                     kH30sizedBox,
                     OtpTextField(
                       controller: _authController.otpTextEditingController,
@@ -68,7 +68,7 @@ class OTPScreen extends StatelessWidget {
                     kH20sizedBox,
                     CustomElevatedButton(
                       buttonWidth: width - 40,
-                      buttonHeight: h50,
+                      buttonHeight: h40,
                       labelIcon: Icons.arrow_right_alt_outlined,
                       label: ksVerify.tr,
                       onPressed: _authController.canOTPVerifyNow.value

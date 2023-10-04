@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
             height: height - MediaQuery.of(context).padding.top,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: k30Padding, left: k20Padding, right: k20Padding),
+                padding: const EdgeInsets.only(top: k10Padding, left: k20Padding, right: k20Padding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -104,8 +104,8 @@ class TermsConditionText extends StatelessWidget {
 }
 
 class TopRowAndImage extends StatelessWidget {
-  const TopRowAndImage({super.key, required this.imageLink, this.icon, this.backOnPressed});
-  final String imageLink;
+  const TopRowAndImage({super.key, this.imageLink, this.icon, this.backOnPressed});
+  final String? imageLink;
   final IconData? icon;
   final VoidCallback? backOnPressed;
   @override
@@ -137,10 +137,12 @@ class TopRowAndImage extends StatelessWidget {
             ),
           ],
         ),
-        Image.asset(
-          imageLink,
-          height: 200,
-        )
+        imageLink != null
+            ? Image.asset(
+                imageLink!,
+                height: 250,
+              )
+            : const SizedBox(),
       ],
     );
   }

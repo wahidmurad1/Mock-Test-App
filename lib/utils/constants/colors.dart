@@ -22,3 +22,4 @@ const Color cGreyColor = Color(0xFF3C3C43);
 // const Color cRedColor = Color(0xFFFF0000);
 const Color cRedAccentColor = Color(0xFFF76554);
 const Color cBlueShade = Color(0XFFB8B1FF);
+const Color cBlueTintColor = Color(0XFFF1F6FF);
