@@ -41,7 +41,9 @@ const String ksPayment = 'Payment';
 const String ksSettings = 'Settings';
 const String ksFAQ = 'FAQ';
 const String ksSupport = 'Support';
-const String ksLogout = 'Logout';
+const String ksLogOut = 'Logout';
+const String ksConfirmation = 'Conformation';
+const String ksAreYouSureYouWantToLogout = 'Are you sure you want to Logout';
 
 
 //! end:: string

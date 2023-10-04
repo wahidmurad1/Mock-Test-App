@@ -1,4 +1,5 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
+import 'package:mock_test_app/widgets/alert_dialog/common_alert_dialog.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -6,6 +7,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 0,
       child: ListView(
         children: [
           SizedBox(
@@ -14,58 +16,52 @@ class CustomDrawer extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: cWhiteColor,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(0),
-                  topRight: Radius.circular(0),
-                  bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: cBottomNavBarColor,
+                    spreadRadius: 0,
+                    blurRadius: 5,
+                    offset: Offset(0, 0),
+                  ),
+                ],
               ),
-              child: ListView(
+              child: Column(
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: k20Padding),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  width: 2,
-                                  color: cPrimaryColor,
-                                )),
-                            child: Image.asset(otpImage),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: k20Padding),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 2,
+                                color: cPrimaryColor,
+                              )),
+                          child: Image.asset(otpImage),
+                        ),
+                        kW20sizedBox,
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Text(
+                            'Wahid Murad',
+                            style: p16MediumTextStyle(cTextPrimaryColor),
                           ),
-                          kW20sizedBox,
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: Text(
-                              'Wahid Murad',
-                              style: p16MediumTextStyle(cTextPrimaryColor),
-                            ),
-                          ),
-                          const Spacer(),
-                          const Icon(
-                            Icons.keyboard_arrow_right_outlined,
-                            size: kIconSize16,
-                            color: cBlackColor,
-                          ),
-                        ],
-                      ),
+                        ),
+                        const Spacer(),
+                        const Icon(
+                          Icons.keyboard_arrow_right_outlined,
+                          size: kIconSize16,
+                          color: cBlackColor,
+                        ),
+                      ],
                     ),
                   ),
-                  //  const Padding(
-                  //     padding:  EdgeInsets.only(right: 20, top: 10),
-                  //     child: Align(
-                  //       alignment: Alignment.topRight,
-                  //       child: Icon(
-                  //         Icons.verified,
-                  //         color: Colors.blue,
-                  //       ),
-                  //     ),
-                  //   ),
                 ],
               ),
               // }),
@@ -100,11 +96,14 @@ class CustomDrawer extends StatelessWidget {
             title: ksSupport,
           ),
           CustomElevatedButton(
-            label: ksLogout,
-            onPressed: () {},
+            label: ksLogOut.tr,
+            onPressed: () {
+              logout(context);
+            },
+            buttonWidth: width * 0.5,
             buttonHeight: h40,
             labelIcon: Icons.logout,
-            buttonColor: cRedColor,
+            buttonColor: cRedAccentColor,
             textStyle: p16MediumTextStyle(cWhiteColor),
           ),
         ],
@@ -127,4 +126,35 @@ class CustomListTileForDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+void logout(BuildContext context) {
+  showAlertDialog(
+    context: context,
+    child: CommonAlertDialog(
+      title: ksConfirmation.tr,
+      addContent: Padding(
+        padding: const EdgeInsets.symmetric(vertical: k5Padding),
+        child: Text(
+          ksAreYouSureYouWantToLogout.tr,
+          textAlign: TextAlign.center,
+          style: p14MediumTextStyle(cTextPrimaryColor),
+        ),
+      ),
+      actions: [
+        CustomElevatedButton(
+          buttonWidth: width * .5,
+          buttonHeight: h40,
+          label: ksLogOut.tr,
+          buttonColor: cRedAccentColor,
+          onPressed: () async {
+            //*Logout Api Call Here
+          },
+        ),
+        kH10sizedBox,
+      ],
+      hasCloseBtn: true,
+      onClose: () => Get.back(),
+    ),
+  );
 }
