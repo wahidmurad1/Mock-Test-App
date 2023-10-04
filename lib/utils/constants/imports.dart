@@ -23,3 +23,4 @@ export 'package:mock_test_app/widgets/common/auth/count_down.dart';
 export 'package:mock_test_app/widgets/common/auth/otp_textfield.dart';
 export 'package:mock_test_app/widgets/common/common_rich_text.dart';
 export 'package:mock_test_app/views/profile/profile.dart';
+export 'package:mock_test_app/views/test_screens/test_screen.dart';

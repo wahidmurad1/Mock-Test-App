@@ -8,7 +8,7 @@ class CustomRoundedCircleIconButton extends StatelessWidget {
     this.iconColor,
     this.borderColor,
     this.size,
-    this.containerColor,
+    this.containerColor, this.containerWidth, this.containerHeight,
   }) : super(key: key);
 
   final Function()? onPress;
@@ -16,12 +16,14 @@ class CustomRoundedCircleIconButton extends StatelessWidget {
   final Color? iconColor, borderColor;
   final double? size;
   final Color? containerColor;
+  final double? containerWidth;
+  final double? containerHeight;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height > kSmallDeviceSizeLimit ? 25 : 20,
-      width: height > kSmallDeviceSizeLimit ? 25 : 20,
+      height: containerHeight ?? (height > kSmallDeviceSizeLimit ? 25 : 20),
+      width: containerWidth ?? (height > kSmallDeviceSizeLimit ? 25 : 20),
       decoration: BoxDecoration(
           color: containerColor ?? cWhiteColor,
           shape: BoxShape.circle,

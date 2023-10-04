@@ -1,8 +1,8 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
 
 //* In App colors
-const Color cWhiteColor = Color(0XFFFFFFFF);
-const Color cPrimaryColor = Color(0XFF1877F2);
+const Color cWhiteColor = Color(0xFFFFFFFF);
+const Color cPrimaryColor = Color(0xFF1877F2);
 const Color cPrimaryShadeColor = Color(0XFF208DFE);
 const Color cBottomNavBarColor = Color.fromARGB(255, 165, 203, 244);
 const Color cIconColor = Color(0xFF97999B);
@@ -18,7 +18,7 @@ const Color cRadicalRedColor = Color(0xFFFF2D55);
 const Color cMediumShadeOrangeColor = Color(0xFFB25000);
 const Color cSlateBlueColor = Color(0xFF5856D6);
 // const Color cVividBlueColor = Color(0xFF0A84FF);
-const Color cGreyColor = Color(0xFF3C3C43);
+const Color cGreyColor = Color(0xFFC6C6C6);
 // const Color cRedColor = Color(0xFFFF0000);
 const Color cRedAccentColor = Color(0xFFF76554);
 const Color cBlueShade = Color(0XFFB8B1FF);

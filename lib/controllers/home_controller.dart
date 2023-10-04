@@ -16,14 +16,7 @@ class HomeController extends GetxController {
   final RxList mcqTestList = RxList(mcqTestLists);
   final RxBool mcqTestArrowDownButton = RxBool(true);
 
-  //*Bottom Navigation bar index
-  RxInt bottomNavBarIndex = RxInt(0);
-   final screens = [
-    krHomeScreen,
-    krLogin,
-    krProfile,
-    krHomeScreen,
-  ];
+
   //  final screens = [
   //   Get.toNamed(krHomeScreen),
   //   Get.toNamed(krLogin),

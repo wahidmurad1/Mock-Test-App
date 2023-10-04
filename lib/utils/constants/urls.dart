@@ -26,3 +26,4 @@ const String splashImage = 'assets/images/splash_image.png';
 const String loginImage = 'assets/images/login.png';
 const String otpImage = 'assets/images/otp.png';
 const String starImage = 'assets/images/star.png';
+const String mockTestImage = 'assets/images/mock_test.png';

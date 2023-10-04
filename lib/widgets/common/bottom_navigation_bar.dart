@@ -1,10 +1,10 @@
-import 'package:mock_test_app/controllers/home_controller.dart';
+import 'package:mock_test_app/controllers/common_controller/globa_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   CustomBottomNavigationBar({super.key});
-  final HomeController _homeController = Get.find<HomeController>();
- 
+  final GlobalController _globalController = Get.find<GlobalController>();
+
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -18,10 +18,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
         child: NavigationBar(
           height: height > kSmallDeviceSizeLimit ? 70 : 60,
           backgroundColor: cWhiteColor,
-          selectedIndex: _homeController.bottomNavBarIndex.value,
+          selectedIndex: _globalController.bottomNavBarIndex.value,
           onDestinationSelected: (value) {
-            _homeController.bottomNavBarIndex.value = value;
-            Get.toNamed(_homeController.screens[value]);
+            _globalController.bottomNavBarIndex.value = value;
+            Get.toNamed(_globalController.screens[value]);
           },
           destinations: const [
             NavigationDestination(

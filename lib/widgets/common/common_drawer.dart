@@ -1,5 +1,4 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/widgets/alert_dialog/common_alert_dialog.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

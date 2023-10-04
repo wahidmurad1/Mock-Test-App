@@ -16,7 +16,7 @@ class OTPScreen extends StatelessWidget {
             height: height - MediaQuery.of(context).padding.top,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: k10Padding, left: k20Padding, right: k20Padding),
+                padding: const EdgeInsets.all(k20Padding).copyWith(bottom: k0Padding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
