@@ -1,9 +1,7 @@
 import 'package:mock_test_app/controllers/home_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/widgets/appbar/custom_home_screen_appbar.dart';
-import 'package:mock_test_app/widgets/common/bottom_navigation_bar.dart';
-import 'package:mock_test_app/widgets/common/common_drawer.dart';
-import 'package:mock_test_app/widgets/common/common_text_button.dart';
+
+
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -265,98 +263,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class CustomListItems extends StatelessWidget {
-  const CustomListItems(
-      {super.key,
-      this.backgroundImage,
-      required this.itemTitle,
-      required this.subTittle1,
-      required this.subTittle2,
-      this.subTittle3,
-      this.priceWidget,
-      this.freeOrPaidWidget});
-  final ImageProvider<Object>? backgroundImage;
-  final String itemTitle;
-  final String subTittle1;
-  final String subTittle2;
-  final String? subTittle3;
-  final Widget? priceWidget;
-  final Widget? freeOrPaidWidget;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: k8Padding),
-      child: Container(
-        width: width,
-        height: 100,
-        decoration: BoxDecoration(
-          color: cWhiteColor,
-          borderRadius: BorderRadius.circular(k10BorderRadius),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: k20Padding),
-          child: Row(
-            children: [
-              backgroundImage != null
-                  ? CircleAvatar(
-                      radius: 30,
-                      backgroundColor: cBackgroundNeutralColor2,
-                      backgroundImage: backgroundImage,
-                    )
-                  : const SizedBox(),
-              backgroundImage != null ? kW30sizedBox : const SizedBox(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  freeOrPaidWidget != null ? freeOrPaidWidget ?? const SizedBox() : const SizedBox(),
-                  freeOrPaidWidget != null ? kH5sizedBox : const SizedBox(),
-                  Text(
-                    itemTitle,
-                    style: p16MediumTextStyle(cTextPrimaryColor),
-                  ),
-                  kH5sizedBox,
-                  Row(
-                    children: [
-                      Text(
-                        subTittle1,
-                        style: p12RegularTextStyle(cTextSecondaryColor),
-                      ),
-                      const DotContainer(),
-                      Text(
-                        subTittle2,
-                        style: p12RegularTextStyle(cTextSecondaryColor),
-                      ),
-                      subTittle3 != null ? const DotContainer() : const SizedBox(),
-                      subTittle3 != null
-                          ? Text(
-                              subTittle3!,
-                              style: p12RegularTextStyle(cTextSecondaryColor),
-                            )
-                          : const SizedBox(),
-                      kW5sizedBox,
-                      backgroundImage != null ? Image.asset(starImage) : const SizedBox(),
-                      kW10sizedBox,
-                      priceWidget ?? const SizedBox(),
-                    ],
-                  ),
-                ],
-              ),
-              const Spacer(),
-              CustomRoundedCircleIconButton(
-                onPress: () {},
-                icon: Icons.arrow_right_alt_outlined,
-                iconColor: cIconColor,
-                size: kIconSize18,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class DotContainer extends StatelessWidget {
   const DotContainer({super.key});
 
@@ -370,58 +276,6 @@ class DotContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(k10BorderRadius),
         color: cGreenColor,
       ),
-    );
-  }
-}
-
-class CustomImageSlider extends StatelessWidget {
-  const CustomImageSlider({super.key, required this.sliderImageList, required this.carouselController, required this.currentIndex});
-  final List sliderImageList;
-  final CarouselController carouselController;
-  final RxInt currentIndex;
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        InkWell(
-          onTap: () {},
-          child: CarouselSlider(
-            items: sliderImageList.map((element) => Image.asset(element['image'])).toList(),
-            carouselController: carouselController,
-            options: CarouselOptions(
-                scrollPhysics: const BouncingScrollPhysics(),
-                autoPlay: true,
-                aspectRatio: 2,
-                disableCenter: true,
-                viewportFraction: 1,
-                enlargeCenterPage: false,
-                onPageChanged: (index, reason) {
-                  currentIndex.value = index;
-                }),
-          ),
-        ),
-        Positioned(
-          bottom: 10,
-          left: 0,
-          right: 0,
-          child: Obx(() => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: sliderImageList.asMap().entries.map((entry) {
-                return GestureDetector(
-                  onTap: () => carouselController.animateToPage(entry.key),
-                  child: Container(
-                    width: 8,
-                    height: 8,
-                    margin: const EdgeInsets.symmetric(horizontal: k5Padding),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(k10BorderRadius),
-                      color: currentIndex.value == entry.key ? cPrimaryColor : cBackgroundNeutralColor2,
-                    ),
-                  ),
-                );
-              }).toList())),
-        ),
-      ],
     );
   }
 }
@@ -458,29 +312,7 @@ class HomePageContainers extends StatelessWidget {
   }
 }
 
-class ListViewTopRow extends StatelessWidget {
-  const ListViewTopRow({super.key, required this.title, required this.viewAllOnPressed});
-  final String title;
-  final VoidCallback viewAllOnPressed;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: p16MediumTextStyle(cTextPrimaryColor),
-        ),
-        CustomTextButton(
-          text: ksViewAll,
-          textStyle: p12RegularTextStyle(cPrimaryColor),
-          onPressed: viewAllOnPressed,
-          isIconExits: true,
-        ),
-      ],
-    );
-  }
-}
+
 
 class AudioBookImage extends StatelessWidget {
   const AudioBookImage({super.key, required this.imageName});
