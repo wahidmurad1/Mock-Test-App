@@ -74,6 +74,9 @@ class OTPScreen extends StatelessWidget {
                       onPressed: _authController.canOTPVerifyNow.value
                           ? () {
                               verifiedAlertDialog(context);
+                              Future.delayed(const Duration(seconds: 3), () {
+                                Get.offAllNamed(krHomeScreen);
+                              });
                             }
                           : null,
                       textStyle: p16MediumTextStyle(cWhiteColor),
@@ -116,17 +119,6 @@ void verifiedAlertDialog([context]) {
           ),
         ),
       ),
-      actions: [
-        CustomElevatedButton(
-          buttonWidth: width * .5,
-          label: ksNext.tr,
-          buttonColor: cPrimaryColor,
-          onPressed: () async {
-            Get.toNamed(krHomeScreen);
-          },
-        ),
-        kH10sizedBox,
-      ],
       hasCloseBtn: true,
       onClose: () => Get.back(),
     ),
