@@ -15,7 +15,8 @@ class HomeController extends GetxController {
   //*MCQ Test
   final RxList mcqTestList = RxList(mcqTestLists);
   final RxBool mcqTestArrowDownButton = RxBool(true);
-
+  //*Audio Book Image List
+  final RxList audioBookList = RxList(audioBookLists);
 
   //  final screens = [
   //   Get.toNamed(krHomeScreen),

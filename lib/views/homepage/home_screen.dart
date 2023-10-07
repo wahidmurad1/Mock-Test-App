@@ -110,7 +110,6 @@ class HomeScreen extends StatelessWidget {
                                   subTittle2: item['rating'],
                                   priceWidget: PriceWidgetContainer(
                                     price: item['price'],
-                                    
                                   ),
                                 ),
                               ),
@@ -200,25 +199,17 @@ class HomeScreen extends StatelessWidget {
                         title: ksAudioBook,
                         viewAllOnPressed: () {},
                       ),
-                      const SingleChildScrollView(
+                      //*Audio Book image
+                      SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            AudioBookImage(
-                              imageName: otpImage,
-                            ),
-                            AudioBookImage(
-                              imageName: loginImage,
-                            ),
-                            AudioBookImage(
-                              imageName: otpImage,
-                            ),
-                            AudioBookImage(
-                              imageName: loginImage,
-                            ),
-                            AudioBookImage(
-                              imageName: otpImage,
-                            ),
+                            for (int index = 0; index < _homeController.audioBookList.length; index++)
+                              Image.asset(
+                                _homeController.audioBookList[index]['audio_book_image'],
+                                width: 120,
+                                height: 140,
+                              ),
                           ],
                         ),
                       ),
@@ -276,23 +267,6 @@ class HomePageContainers extends StatelessWidget {
         Text(
           text,
           style: p12RegularTextStyle(cTextPrimaryColor),
-        ),
-      ],
-    );
-  }
-}
-
-class AudioBookImage extends StatelessWidget {
-  const AudioBookImage({super.key, required this.imageName});
-  final String imageName;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(
-          imageName,
-          width: 120,
-          height: 140,
         ),
       ],
     );

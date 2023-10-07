@@ -8,7 +8,15 @@ List gifSliderImageLists = [
   {'id': 2, 'image': 'assets/images/a.gif'},
   {'id': 3, 'image': 'assets/images/rotating_earth.gif'},
 ];
-
+List audioBookLists = [
+  {'audio_book_image': 'assets/images/otp.png'},
+  {'audio_book_image': 'assets/images/login.png'},
+  {'audio_book_image': 'assets/images/otp.png'},
+  {'audio_book_image': 'assets/images/login.png'},
+  {'audio_book_image': 'assets/images/otp.png'},
+  {'audio_book_image': 'assets/images/otp.png'},
+  {'audio_book_image': 'assets/images/otp.png'},
+];
 List popularMockTestLists = [
   {
     'image': 'assets/images/otp.png',
@@ -262,5 +270,4 @@ List mcqTestLists = [
     "examTime": "30 mins",
     "examQuestionNumber": "100 questions",
   },
- 
 ];
