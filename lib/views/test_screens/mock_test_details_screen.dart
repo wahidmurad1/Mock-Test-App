@@ -154,46 +154,6 @@ class MockTestDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 kH30sizedBox,
-
-                // kH10sizedBox,
-                // Expanded(
-                //   child: SingleChildScrollView(
-                //     scrollDirection: Axis.horizontal,
-                //     child: Row(
-                //       children: [
-                //         for (int index = 0; index < _mockTestController.mockTestTeacherList.length; index++)
-                //           SingleChildScrollView(
-                //             child: Row(
-                //               children: [
-                //                 Container(
-                //                   width: 50,
-                //                   height: 50,
-                //                   decoration: const BoxDecoration(shape: BoxShape.circle, color: cGreyColor),
-                //                   child: Image.asset(_mockTestController.mockTestTeacherList[index]['teacher_image']),
-                //                 ),
-                //                 Column(
-                //                   children: [
-                //                     Text(
-                //                       _mockTestController.mockTestTeacherList[index]['teacher_name'],
-                //                       style: p12MediumTextStyle(cTextPrimaryColor),
-                //                     ),
-                //                     Text(
-                //                       _mockTestController.mockTestTeacherList[index]['teacher_title'],
-                //                       style: p12RegularTextStyle(cTextSecondaryColor),
-                //                     ),
-                //                     Text(
-                //                       _mockTestController.mockTestTeacherList[index]['teacher_designation'],
-                //                       style: p12RegularTextStyle(cTextSecondaryColor),
-                //                     ),
-                //                   ],
-                //                 ),
-                //               ],
-                //             ),
-                //           ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),
