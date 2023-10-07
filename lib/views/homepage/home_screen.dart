@@ -108,33 +108,9 @@ class HomeScreen extends StatelessWidget {
                                   itemTitle: item['title'],
                                   subTittle1: item['examTime'],
                                   subTittle2: item['rating'],
-                                  priceWidget: Container(
-                                    width: h32,
-                                    height: h16,
-                                    decoration: BoxDecoration(
-                                      color: cPrimaryShadeColor,
-                                      borderRadius: BorderRadius.circular(k5BorderRadius),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        Center(
-                                          child: Text(
-                                            item['price'],
-                                            style: p12MediumTextStyle(cWhiteColor),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: 0,
-                                          right: 2,
-                                          child: Text(
-                                            ksTaka,
-                                            style: p10RegularTextStyle(cWhiteColor),
-                                            textAlign: TextAlign.end,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                  priceWidget: PriceWidgetContainer(
+                                    price: item['price'],
+                                    
                                   ),
                                 ),
                               ),

@@ -50,6 +50,7 @@ const String ksSearchHere = 'Search here';
 const String ksPopular = 'Popular';
 const String ksGovt = 'Govt.';
 const String ksPrivate = 'Private';
+const String ks990Tk = '৯৯০';
 
 
 //! end:: string

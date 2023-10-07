@@ -1,10 +1,3 @@
-List contactUsMessages = [
-  {
-    'user': 'Admin',
-    'message':
-        'Here goes the descriptions of everything of contact us to Pricebond and other things. Here goes the descriptions of everything of contact us to Pricebond  and other things.'
-  }
-];
 List slider1ImageLists = [
   {'id': 1, 'image': 'assets/images/tip1.png'},
   {'id': 2, 'image': 'assets/images/login.png'},
@@ -17,6 +10,136 @@ List gifSliderImageLists = [
 ];
 
 List popularMockTestLists = [
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+];
+List govtMockTestLists = [
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/login.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+  {
+    'image': 'assets/images/otp.png',
+    "title": "45th BCS Mock Test",
+    "examTime": "20 mins",
+    "rating": "10",
+    "price": "৫৯০",
+  },
+];
+List privateTestLists = [
   {
     'image': 'assets/images/otp.png',
     "title": "45th BCS Mock Test",
