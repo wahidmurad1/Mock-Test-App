@@ -60,9 +60,9 @@ class MockTestScreen extends StatelessWidget {
                 //*Popular Test List in tabbar
                 ListView.builder(
                   shrinkWrap: true,
-                  itemCount: _mockTestController.mockTestList.length,
+                  itemCount: _mockTestController.popularMockTestList.length,
                   itemBuilder: (context, index) {
-                    var item = _mockTestController.mockTestList[index];
+                    var item = _mockTestController.popularMockTestList[index];
                     return Padding(
                       padding: const EdgeInsets.only(bottom: k5Padding),
                       child: ClipRRect(
@@ -71,6 +71,8 @@ class MockTestScreen extends StatelessWidget {
                           style: kTextButtonStyle,
                           onPressed: () async {
                             // ll(index);
+                            _mockTestController.popularMockTestDetailsMapData(index);
+                            Get.toNamed(krMockTestDetailsScreen);
                           },
                           child: CustomListItems(
                               backgroundImage: AssetImage(item['image']),

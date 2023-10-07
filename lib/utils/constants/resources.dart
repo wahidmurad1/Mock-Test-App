@@ -27,7 +27,7 @@ List popularMockTestLists = [
   },
   {
     'image': 'assets/images/otp.png',
-    "title": "45th BCS Mock Test",
+    "title": "IELTS Mock Test",
     "examTime": "20 mins",
     "rating": "10",
     "price": "৫৯০",

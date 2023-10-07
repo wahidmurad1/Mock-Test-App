@@ -27,3 +27,4 @@ const String loginImage = 'assets/images/login.png';
 const String otpImage = 'assets/images/otp.png';
 const String starImage = 'assets/images/star.png';
 const String mockTestImage = 'assets/images/mock_test.png';
+const String bcsImage = 'assets/images/bcs_image.png';

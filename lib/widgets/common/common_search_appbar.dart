@@ -111,7 +111,6 @@ class CustomSearchAppBar extends StatelessWidget {
             onPressed: filterButtonOnPressed,
           ),
         ],
-        
       ),
     );
   }

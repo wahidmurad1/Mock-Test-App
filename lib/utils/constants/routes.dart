@@ -1,4 +1,5 @@
 import 'package:mock_test_app/utils/constants/imports.dart';
+import 'package:mock_test_app/views/test_screens/mock_test_details_screen.dart';
 
 //* info:: auth screens
 
@@ -15,6 +16,7 @@ const String krProfile = '/profile';
 //*All Tests
 const String krTestScreen = '/test-screen';
 const String krMockTestScreen = '/mock-test-screen';
+const String krMockTestDetailsScreen = '/mock-test-details-screen';
 
 //*All Routes
 
@@ -34,4 +36,5 @@ List<GetPage<dynamic>>? routes = [
   //*Test Screens
   GetPage(name: krTestScreen, page: () => TestScreen(), transition: Transition.noTransition),
   GetPage(name: krMockTestScreen, page: () => MockTestScreen(), transition: Transition.noTransition),
+  GetPage(name: krMockTestDetailsScreen, page: () => MockTestDetailsScreen(), transition: Transition.noTransition),
 ];
