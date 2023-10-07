@@ -22,7 +22,8 @@ class MockTestDetailsScreen extends StatelessWidget {
               Get.back();
             }),
       ),
-      // bottomNavigationBar: CustomBottomNavigationBar(),
+      
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: SizedBox(
           width: width,
@@ -90,7 +91,7 @@ class MockTestDetailsScreen extends StatelessWidget {
                             onPressed: () async {
                               // ll(index);
                             },
-                            child: Container(
+                            child: SizedBox(
                               width: width * 0.6,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
