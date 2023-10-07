@@ -20,16 +20,8 @@ class MockTestController extends GetxController {
   popularMockTestDetailsMapData(int index){
     popularMockTestMap['title'] = popularMockTestList[index]['title'].toString();
   }
-
-  //   final Map<String, dynamic> yearlyPackageMap = {};
-  // final Map<String, dynamic> unlimitedPackageMap = {};
-  // final Map<String, dynamic> specialOfferMap = {};
-
-  // yearlyPackageDataFetch(int index) {
-  //   yearlyPackageMap['name'] = yearlySubscriptionData[index].title.toString();
-  //   yearlyPackageMap['entries'] = yearlySubscriptionData[index].bondLimit.toString();
-  //   yearlyPackageMap['amount'] = yearlySubscriptionData[index].price.toString();
-  //   yearlyPackageMap['start'] = yearlySubscriptionData[index].type.toString();
-  //   yearlyPackageMap['validation'] = ksValid1Year.tr;
-  // }
+ //*Course Feature List
+ final RxList mockTestCourseFeature = RxList(mockTestCourseFeatures); 
+ //*Teachers List
+ final RxList mockTestTeacherList = RxList(mockTestTeachersLists);
 }

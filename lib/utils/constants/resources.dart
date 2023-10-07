@@ -271,3 +271,48 @@ List mcqTestLists = [
     "examQuestionNumber": "100 questions",
   },
 ];
+
+List mockTestCourseFeatures = [
+  {
+    "features": "অভিজ্ঞ শিক্ষক",
+  },
+  {
+    "features": "রিওয়ার্ড পয়েন্ট ",
+  },
+  {
+    "features": "সার্টিফিকেট ",
+  },
+  {
+    "features": "মন মতো সিডিউল নির্বাচন",
+  },
+  {
+    "features": "নেট সমস্যা/বিদ্যুৎ বিভ্রান্ত ইত্যাদি সমস্যা থাকলে ব্যাকআপ রয়েছে",
+  },
+];
+
+List mockTestTeachersLists = [
+  {
+    'teacher_image': 'assets/images/otp.png',
+    'teacher_name': 'সামিউর রহমান',
+    'teacher_title': 'সহকারী কমিশনার ও এক্সিকিউটিভ',
+    'teacher_designation': 'ম্যাজিস্ট্রেট, ৪০তম বিসিএস'
+  },
+  {
+    'teacher_image': 'assets/images/otp.png',
+    'teacher_name': 'শেখ মোঃ শহীদুল ইসলাম (নওশাদ)',
+    'teacher_title': 'সহকারী কমিশনার ও এক্সিকিউটিভ',
+    'teacher_designation': 'ম্যাজিস্ট্রেট, ৪০তম বিসিএস'
+  },
+  {
+    'teacher_image': 'assets/images/otp.png',
+    'teacher_name': 'সামিউর রহমান',
+    'teacher_title': 'সহকারী কমিশনার ও এক্সিকিউটিভ',
+    'teacher_designation': 'ম্যাজিস্ট্রেট, ৪০তম বিসিএস'
+  },
+  {
+    'teacher_image': 'assets/images/otp.png',
+    'teacher_name': 'শেখ মোঃ শহীদুল ইসলাম (নওশাদ)',
+    'teacher_title': 'সহকারী কমিশনার ও এক্সিকিউটিভ',
+    'teacher_designation': 'ম্যাজিস্ট্রেট, ৪০তম বিসিএস'
+  },
+];

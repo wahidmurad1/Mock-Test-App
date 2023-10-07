@@ -39,7 +39,7 @@ class CustomElevatedButton extends StatelessWidget {
             minimumSize: MaterialStateProperty.all(Size.zero),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: isCircularHead ? BorderRadius.circular(kButtonBorderRadius) : BorderRadius.circular(k5BorderRadius),
+              borderRadius: isCircularHead ? BorderRadius.circular(kButtonBorderRadius) : BorderRadius.circular(k10BorderRadius),
               side: BorderSide(color: (buttonColor == cWhiteColor) ? (borderColor ?? cPrimaryColor) : cTransparentColor, width: 1),
             )),
             backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
