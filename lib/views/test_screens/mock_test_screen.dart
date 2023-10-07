@@ -55,10 +55,10 @@ class MockTestScreen extends StatelessWidget {
               ],
             ),
             Expanded(
-              child: TabBarView(physics: const AlwaysScrollableScrollPhysics(), children: [
+              child: TabBarView(physics: const NeverScrollableScrollPhysics(), children: [
+                //*Popular Test List in tabbar
                 ListView.builder(
                   shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
                   itemCount: _mockTestController.mockTestList.length,
                   itemBuilder: (context, index) {
                     var item = _mockTestController.mockTestList[index];
@@ -156,9 +156,9 @@ class MockTestScreen extends StatelessWidget {
                     );
                   },
                 ),
+                //*Govt. Test List in tabbar
                 ListView.builder(
                   shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
                   itemCount: _homeController.popularMockTestList.length,
                   itemBuilder: (context, index) {
                     var item = _homeController.popularMockTestList[index];
@@ -210,9 +210,9 @@ class MockTestScreen extends StatelessWidget {
                     );
                   },
                 ),
+                //*private Test List in tabbar
                 ListView.builder(
                   shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
                   itemCount: _homeController.popularMockTestList.length,
                   itemBuilder: (context, index) {
                     var item = _homeController.popularMockTestList[index];
