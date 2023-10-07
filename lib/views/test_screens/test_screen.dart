@@ -23,6 +23,7 @@ class TestScreen extends StatelessWidget {
           filterButtonOnPressed: () {},
         ),
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
       body: Obx(
         () => SizedBox(
           width: width,
@@ -64,7 +65,7 @@ class TestScreen extends StatelessWidget {
                               itemTitle: item['title'],
                               subTittle1: item['examTime'],
                               subTittle2: item['rating'],
-                              priceWidget: PriceWidgetContainer(price: item['price'], isDiscountAvailable: true,priceWithoutDiscount: ks990Tk),
+                              priceWidget: PriceWidgetContainer(price: item['price'], isDiscountAvailable: true, priceWithoutDiscount: ks990Tk),
                             ),
                           ),
                         ),

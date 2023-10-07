@@ -21,10 +21,13 @@ class MockTestScreen extends StatelessWidget {
             },
             title: ksMockTest,
             onChanged: (value) {},
-            closeIconOnPressed: () {},
+            closeIconOnPressed: () {
+              _globalController.testSearchController.clear();
+            },
             filterButtonOnPressed: () {},
           ),
         ),
+        bottomNavigationBar: CustomBottomNavigationBar(),
         body: Column(
           children: [
             TabBar(
