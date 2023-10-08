@@ -1,6 +1,5 @@
 import 'package:mock_test_app/controllers/mock_test_controller.dart';
 import 'package:mock_test_app/utils/constants/imports.dart';
-import 'package:mock_test_app/widgets/appbar/custom_appbar.dart';
 
 class MockTestDetailsScreen extends StatelessWidget {
   MockTestDetailsScreen({super.key});
@@ -22,7 +21,6 @@ class MockTestDetailsScreen extends StatelessWidget {
               Get.back();
             }),
       ),
-      
       bottomNavigationBar: CustomBottomNavigationBar(),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -64,7 +62,9 @@ class MockTestDetailsScreen extends StatelessWidget {
                 kH20sizedBox,
                 CustomElevatedButton(
                   label: 'মূল্য:- ৯৯০$ksTaka',
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(krScheduleScreen);
+                  },
                   buttonColor: cPrimaryShadeColor,
                 ),
                 kH30sizedBox,
@@ -72,7 +72,6 @@ class MockTestDetailsScreen extends StatelessWidget {
                   'শিক্ষক সমূহ:-',
                   style: p14MediumTextStyle(cTextPrimaryColor),
                 ),
-
                 kH10sizedBox,
                 SizedBox(
                   height: 60,

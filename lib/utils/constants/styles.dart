@@ -69,7 +69,7 @@ TextStyle p16RegularTextStyle(Color color) {
 }
 
 TextStyle p14MediumTextStyle(Color color) {
-  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w500, fontSize: screenWiseSize(h14, 2), color: color);
+  return TextStyle(fontFamily: ksSourceSans3, fontWeight: FontWeight.w600, fontSize: screenWiseSize(h14, 2), color: color);
 }
 
 TextStyle p14RegularTextStyle(Color color) {

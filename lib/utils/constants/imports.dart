@@ -34,3 +34,6 @@ export 'package:mock_test_app/widgets/appbar/custom_home_screen_appbar.dart';
 export 'package:mock_test_app/widgets/common/common_search_appbar.dart';
 export 'package:mock_test_app/views/test_screens/mock_test_screen.dart';
 export 'package:mock_test_app/widgets/common/test_lists/common_price_widget_container.dart';
+export 'package:mock_test_app/widgets/appbar/custom_appbar.dart';
+export 'package:mock_test_app/views/schedule/schedule_screen.dart';
+export 'package:mock_test_app/views/test_screens/mock_test_details_screen.dart';

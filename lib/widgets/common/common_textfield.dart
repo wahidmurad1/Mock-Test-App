@@ -86,7 +86,7 @@ class CustomModifiedTextField extends StatelessWidget {
                 )
               : null,
           fillColor: cOutLineColor,
-          alignLabelWithHint: true, // This is necessary if the maxLines is greater than line 1.
+          alignLabelWithHint: true,
           labelText: label,
           hintText: hint,
           labelStyle: hintStyle,

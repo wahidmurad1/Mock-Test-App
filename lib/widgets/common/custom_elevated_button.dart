@@ -9,6 +9,9 @@ class CustomElevatedButton extends StatelessWidget {
   final bool isButtonInPopUp, isCircularHead, autoFocus, isPadding;
   final IconData? labelIcon;
   final TextStyle? textStyle;
+  final Color? labelIconColor;
+  final TextAlign? labelAlign;
+  final bool? isLabelCentered;
 
   const CustomElevatedButton(
       {Key? key,
@@ -23,7 +26,10 @@ class CustomElevatedButton extends StatelessWidget {
       this.isButtonInPopUp = true,
       this.autoFocus = false,
       this.isPadding = false,
-      this.textStyle})
+      this.textStyle,
+      this.labelIconColor,
+      this.labelAlign,
+      this.isLabelCentered = true})
       : super(key: key);
 
   @override
@@ -59,24 +65,27 @@ class CustomElevatedButton extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: labelIcon != null ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
                   children: [
-                    if (labelIcon != null) kW20sizedBox,
-                    Text(
-                      label,
-                      textAlign: TextAlign.center,
-                      style: textStyle ??
-                          MaterialStateTextStyle.resolveWith((Set<MaterialState> states) {
-                            if (states.contains(MaterialState.disabled)) {
-                              return p16MediumTextStyle(cTextSecondaryColor);
-                            }
-                            return p16MediumTextStyle(cWhiteColor);
-                          }),
+                    if (labelIcon != null && isLabelCentered == true) kW20sizedBox,
+                    Padding(
+                      padding: isLabelCentered == false ? const EdgeInsets.only(left: k20Padding) : const EdgeInsets.only(left: k0Padding),
+                      child: Text(
+                        label,
+                        textAlign: labelAlign ?? TextAlign.center,
+                        style: textStyle ??
+                            MaterialStateTextStyle.resolveWith((Set<MaterialState> states) {
+                              if (states.contains(MaterialState.disabled)) {
+                                return p16MediumTextStyle(cTextSecondaryColor);
+                              }
+                              return p16MediumTextStyle(cWhiteColor);
+                            }),
+                      ),
                     ),
                     if (labelIcon != null)
                       Padding(
                         padding: const EdgeInsets.only(right: k20Padding),
                         child: Icon(
                           labelIcon!,
-                          color: cWhiteColor,
+                          color: labelIconColor ?? cWhiteColor,
                           size: screenWiseSize(kIconSize24, 4),
                         ),
                       )

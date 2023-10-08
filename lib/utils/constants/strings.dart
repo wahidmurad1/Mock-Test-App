@@ -51,6 +51,8 @@ const String ksPopular = 'Popular';
 const String ksGovt = 'Govt.';
 const String ksPrivate = 'Private';
 const String ks990Tk = '৯৯০';
+const String ksAppointmentDate = 'Appointment Date';
+const String ksSelectDate = 'Please select appointment date';
 
 
 
