@@ -23,3 +23,4 @@ const Color cGreyColor = Color(0xFFC6C6C6);
 const Color cRedAccentColor = Color(0xFFF76554);
 const Color cBlueShade = Color(0XFFB8B1FF);
 const Color cBlueTintColor = Color(0XFFF1F6FF);
+const Color cAmberColor = Color(0XFFFFBF00);

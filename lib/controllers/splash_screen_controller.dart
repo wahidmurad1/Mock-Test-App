@@ -13,7 +13,7 @@ class SplashScreenController extends GetxController {
 
   Timer startSplashScreen() {
     _globalController.parentRoute.value = "splash-screen";
-    var duration = const Duration(seconds: 3);
+    var duration = const Duration(seconds: 5);
     return Timer(
       duration,
       () async {
